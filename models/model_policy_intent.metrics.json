@@ -1,0 +1,46 @@
+{
+  "trained_on": 11492,
+  "rules": 22,
+  "held_out": {
+    "0.4": {
+      "recall": 0.889,
+      "caught": 56,
+      "flagged_any_rule": 59,
+      "total": 63,
+      "false_positives": 2,
+      "benign": 20
+    },
+    "0.5": {
+      "recall": 0.857,
+      "caught": 54,
+      "flagged_any_rule": 57,
+      "total": 63,
+      "false_positives": 2,
+      "benign": 20
+    },
+    "0.6": {
+      "recall": 0.81,
+      "caught": 51,
+      "flagged_any_rule": 54,
+      "total": 63,
+      "false_positives": 1,
+      "benign": 20
+    },
+    "0.7": {
+      "recall": 0.683,
+      "caught": 43,
+      "flagged_any_rule": 46,
+      "total": 63,
+      "false_positives": 1,
+      "benign": 20
+    },
+    "0.85": {
+      "recall": 0.556,
+      "caught": 35,
+      "flagged_any_rule": 36,
+      "total": 63,
+      "false_positives": 1,
+      "benign": 20
+    }
+  }
+}

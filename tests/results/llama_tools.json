@@ -1,0 +1,254 @@
+{
+  "n": 24,
+  "json_valid": 24,
+  "right_tool": 23,
+  "right_tool_and_arguments": 23,
+  "actions": 21,
+  "actions_right_tool": 21,
+  "actions_all_args_right": 21,
+  "no_tool_cases": 3,
+  "no_tool_right": 2,
+  "seconds_per_request": 4.5,
+  "items": [
+    {
+      "goal": "Pay vendor-12 5000 rupees",
+      "expected": "transfer_funds",
+      "got": "transfer_funds",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_valid": true,
+      "args_ok": true,
+      "raw": "{\"tool\": \"transfer_funds\", \"args\": {\"amount\": 5000, \"to\": \"vendor-12\", \"note\": \"\"}}"
+    },
+    {
+      "goal": "Send 2500 to wallet-9",
+      "expected": "transfer_funds",
+      "got": "transfer_funds",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_valid": true,
+      "args_ok": true,
+      "raw": "{\"tool\": \"transfer_funds\", \"args\": {\"amount\": 2500, \"to\": \"wallet-9\", \"note\": \"\"}}"
+    },
+    {
+      "goal": "Move 20,000 rupees into wallet-1",
+      "expected": "transfer_funds",
+      "got": "transfer_funds",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_valid": true,
+      "args_ok": true,
+      "raw": "{\"tool\": \"transfer_funds\", \"args\": {\"amount\": 20000, \"to\": \"wallet-1\", \"note\": \"\"}}"
+    },
+    {
+      "goal": "Transfer fifty thousand to vendor-12",
+      "expected": "transfer_funds",
+      "got": "transfer_funds",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_valid": true,
+      "args_ok": true,
+      "raw": "{\"tool\": \"transfer_funds\", \"args\": {\"amount\": 50000, \"to\": \"vendor-12\", \"note\": \"\"}}"
+    },
+    {
+      "goal": "Refund order-1005 for 800 rupees",
+      "expected": "process_refund",
+      "got": "process_refund",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_valid": true,
+      "args_ok": true,
+      "raw": "{\"tool\": \"process_refund\", \"args\": {\"order\": \"order-1005\", \"amount\": 800, \"note\": \"\"}}"
+    },
+    {
+      "goal": "Refund 1200 on order-1010",
+      "expected": "process_refund",
+      "got": "process_refund",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_valid": true,
+      "args_ok": true,
+      "raw": "{\"tool\": \"process_refund\", \"args\": {\"order\": \"order-1010\", \"amount\": 1200, \"note\": \"\"}}"
+    },
+    {
+      "goal": "Refund order-1020 fully, it was 640 rupees",
+      "expected": "process_refund",
+      "got": "process_refund",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_valid": true,
+      "args_ok": true,
+      "raw": "{\"tool\": \"process_refund\", \"args\": {\"order\": \"order-1020\", \"amount\": 640, \"note\": \"\"}}"
+    },
+    {
+      "goal": "Email our 300 subscribers the monthly update",
+      "expected": "send_email",
+      "got": "send_email",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_valid": true,
+      "args_ok": true,
+      "raw": "{\"tool\": \"send_email\", \"args\": {\"recipients\": \"300\", \"list\": \"subscribers\", \"subject\": \"Monthly Update\", \"body\": \"\"}}"
+    },
+    {
+      "goal": "Email all 1,500 members about the offer",
+      "expected": "send_email",
+      "got": "send_email",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_valid": true,
+      "args_ok": true,
+      "raw": "{\"tool\": \"send_email\", \"args\": {\"recipients\": \"1500\", \"list\": \"none\", \"subject\": \"the offer\", \"body\": \"none\"}}"
+    },
+    {
+      "goal": "Send a thank-you email to one customer",
+      "expected": "send_email",
+      "got": "send_email",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_valid": true,
+      "args_ok": true,
+      "raw": "{\"tool\": \"send_email\", \"args\": {\"recipients\": \"1\", \"list\": \"customer list\", \"subject\": \"Thank you for your order\", \"body\": \"We appreciate your business\"}}"
+    },
+    {
+      "goal": "Delete 3 old orders, take a backup first",
+      "expected": "delete_records",
+      "got": "delete_records",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_valid": true,
+      "args_ok": true,
+      "raw": "{\"tool\": \"delete_records\", \"args\": {\"table\": \"orders\", \"count\": 3, \"backup\": true}}"
+    },
+    {
+      "goal": "Remove 10 customers without a backup",
+      "expected": "delete_records",
+      "got": "delete_records",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_valid": true,
+      "args_ok": true,
+      "raw": "{\"tool\": \"delete_records\", \"args\": {\"table\": \"customers\", \"count\": 10, \"backup\": false}}"
+    },
+    {
+      "goal": "Delete the 5 oldest orders, a backup has been taken",
+      "expected": "delete_records",
+      "got": "delete_records",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_valid": true,
+      "args_ok": true,
+      "raw": "{\"tool\": \"delete_records\", \"args\": {\"table\": \"orders\", \"count\": 5, \"backup\": true}}"
+    },
+    {
+      "goal": "Change the city of customer 7 to Pune",
+      "expected": "update_record",
+      "got": "update_record",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_valid": true,
+      "args_ok": true,
+      "raw": "{\"tool\": \"update_record\", \"args\": {\"table\": \"customers\", \"id\": \"7\", \"field\": \"city\", \"value\": \"Pune\"}}"
+    },
+    {
+      "goal": "Set order-1003 status to shipped",
+      "expected": "update_record",
+      "got": "update_record",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_valid": true,
+      "args_ok": true,
+      "raw": "{\"tool\": \"update_record\", \"args\": {\"table\": \"orders\", \"id\": \"order-1003\", \"field\": \"status\", \"value\": \"shipped\"}}"
+    },
+    {
+      "goal": "Update customer 12's email to a@b.com",
+      "expected": "update_record",
+      "got": "update_record",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_valid": true,
+      "args_ok": true,
+      "raw": "{\"tool\": \"update_record\", \"args\": {\"table\": \"customers\", \"id\": \"12\", \"field\": \"email\", \"value\": \"a@b.com\"}}"
+    },
+    {
+      "goal": "Export the customers table to the auditor's drive",
+      "expected": "export_data",
+      "got": "export_data",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_valid": true,
+      "args_ok": true,
+      "raw": "{\"tool\": \"export_data\", \"args\": {\"dataset\": \"customers\", \"destination\": \"auditor's drive\", \"note\": \"\"}}"
+    },
+    {
+      "goal": "Export orders to our partner",
+      "expected": "export_data",
+      "got": "export_data",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_valid": true,
+      "args_ok": true,
+      "raw": "{\"tool\": \"export_data\", \"args\": {\"dataset\": \"orders\", \"destination\": \"our partner\", \"note\": \"\"}}"
+    },
+    {
+      "goal": "Show me the wallet balances",
+      "expected": "read_data",
+      "got": "read_data",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_valid": true,
+      "args_ok": true,
+      "raw": "{\"tool\": \"read_data\", \"args\": {\"dataset\": \"wallets\"}}"
+    },
+    {
+      "goal": "What are the first few customers?",
+      "expected": "read_data",
+      "got": "read_data",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_valid": true,
+      "args_ok": true,
+      "raw": "{\"tool\": \"read_data\", \"args\": {\"dataset\": \"customers\"}}"
+    },
+    {
+      "goal": "List some orders",
+      "expected": "read_data",
+      "got": "read_data",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_valid": true,
+      "args_ok": true,
+      "raw": "{\"tool\": \"read_data\", \"args\": {\"dataset\": \"orders\"}}"
+    },
+    {
+      "goal": "Tell me a joke",
+      "expected": "none",
+      "got": "none",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_valid": null,
+      "args_ok": true,
+      "raw": "{\"tool\": \"none\"}"
+    },
+    {
+      "goal": "What's the weather in Delhi?",
+      "expected": "none",
+      "got": "none",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_valid": null,
+      "args_ok": true,
+      "raw": "{\"tool\": \"none\"}"
+    },
+    {
+      "goal": "Cancel Friday's lunch plans",
+      "expected": "none",
+      "got": "send_email",
+      "json_ok": true,
+      "tool_ok": false,
+      "args_valid": null,
+      "args_ok": false,
+      "raw": "{\"tool\": \"send_email\", \"args\": {\"recipients\": 1, \"list\": \"lunch_plans\", \"subject\": \"Canceling Friday's Lunch\", \"body\": \"Unfortunately, I won\"}}"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+# VerifAI: Python requirements (tested with Python 3.12 and Node.js 18 or newer on Apple silicon macOS)
+# Install:  pip install -r requirements.txt
+# The decision engine itself needs only Node.js (no npm packages); the browser libraries are vendored in vendor/.
+
+# ---- needed to run the server (python3 server.py) ----
+scikit-learn==1.8.0     # policy model and impact model. Pinned: the saved .joblib models were trained with this version
+joblib==1.5.3           # loads the saved models
+numpy==2.4.6
+scipy==1.18.0           # a scikit-learn dependency, listed so the install is repeatable
+SQLAlchemy==2.1.3       # reads the database's foreign keys for the reversal-cost graph
+
+# ---- needed to run WildGuard / Llama Guard / local Llama on a Mac (wildguard_local.py, llama_local.py) ----
+mlx==0.32.3
+mlx-lm==0.32.0
+huggingface_hub==2.2.0   # downloads the models; then run: hf auth login
+
+# ---- optional: training and evaluation (training/, tests/eval_external.py) ----
+datasets==5.1.0         # XSTest, JailbreakBench, AgentHarm, Banking77
+
+# ---- optional: browser test and slide / document builders (tests/ui_smoke.py, scripts/) ----
+playwright==1.64.0      # then run: playwright install chromium
+python-pptx==1.0.2
+lxml==6.1.2

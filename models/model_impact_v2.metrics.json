@@ -1,0 +1,24 @@
+{
+  "n_train": 6320,
+  "n_train_augmented": 8836,
+  "C": 10,
+  "cv_macro_f1": 0.9542,
+  "test1_conf60_accuracy": 0.961,
+  "test1_new_accuracy": 0.9277,
+  "test1_new_macro_f1": 0.9281,
+  "test1_n": 83,
+  "test1_old_accuracy": 0.4337,
+  "test1_heuristic_accuracy": 0.494,
+  "test2_conf60_accuracy": 0.9655,
+  "test2_new_accuracy": 0.9667,
+  "test2_new_macro_f1": 0.9666,
+  "test2_n": 60,
+  "test2_old_accuracy": 0.4667,
+  "test2_heuristic_accuracy": 0.5833,
+  "trained_at": "2026-10-12 18:15",
+  "labels": [
+    "HIGH",
+    "LOW",
+    "MID"
+  ]
+}

@@ -1,0 +1,35 @@
+# secrets and local keys: never commit
+.env
+*.pem
+*.key
+
+# live data made while it runs (ledger, outputs, sandbox database)
+records/
+logs/
+*.log
+
+# real sign-in accounts (the sample accounts in users.sample.csv are used when this is missing)
+policy_data/users.csv
+
+# Python and editor noise
+__pycache__/
+*.pyc
+.DS_Store
+.venv/
+venv/
+.idea/
+.vscode/
+
+# downloaded or converted models and datasets (large; see WILDGUARD_SETUP.md)
+wildguard-4bit/
+*.safetensors
+.cache/
+
+# prompts copied from gated or licensed public datasets (AgentHarm is gated; XSTest, JailbreakBench have their own terms).
+# Recreate them with: python3 training/external_split.py   (after downloading the datasets yourself)
+training/data/external_train.jsonl
+tests/external/heldout.json
+tests/results/external_cache_*.json
+tests/results/external_report_*.md
+tests/results/wildguard_cache.json
+tests/results/wg_only_cache.json

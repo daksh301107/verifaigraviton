@@ -1,0 +1,8 @@
+list_name,status,note
+newsletter subscribers,consented,double opt-in
+event attendees,consented,opted in at registration
+existing customers,consented,transactional and service messages only
+purchased leads,no_consent,bought list (SAMPLE)
+scraped contacts,no_consent,collected from the web (SAMPLE)
+cold list,no_consent,never opted in (SAMPLE)
+opted-out users,no_consent,asked to stop (SAMPLE)

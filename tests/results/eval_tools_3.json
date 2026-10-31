@@ -1,0 +1,3188 @@
+{
+  "summary": {
+    "n": 168,
+    "json_valid": 168,
+    "right_tool": 159,
+    "actions": 140,
+    "actions_right_tool": 136,
+    "actions_args_right": 96,
+    "actions_valid_call": 136,
+    "no_tool_cases": 28,
+    "no_tool_right": 23,
+    "per_tool": {
+      "process_refund": [
+        20,
+        20
+      ],
+      "read_data": [
+        19,
+        20
+      ],
+      "delete_records": [
+        20,
+        20
+      ],
+      "none": [
+        23,
+        28
+      ],
+      "send_email": [
+        18,
+        20
+      ],
+      "transfer_funds": [
+        20,
+        20
+      ],
+      "update_record": [
+        20,
+        20
+      ],
+      "export_data": [
+        19,
+        20
+      ]
+    },
+    "per_style": {
+      "terse command with ids and rupee amounts": [
+        32,
+        40
+      ],
+      "plain and direct": [
+        38,
+        38
+      ],
+      "casual chat message, lowercase, a typo or two": [
+        39,
+        40
+      ],
+      "polite and formal": [
+        40,
+        40
+      ],
+      "indirect or euphemistic wording": [
+        5,
+        5
+      ],
+      "a spoken voice command, natural and a bit rambling": [
+        5,
+        5
+      ]
+    }
+  },
+  "items": [
+    {
+      "request": "Refund order-1007 \u20b9150",
+      "style": "terse command with ids and rupee amounts",
+      "expected": "process_refund",
+      "got": "process_refund",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "order id": "order-1007",
+        "amount": 150
+      },
+      "got_args": {
+        "order": "order-1007",
+        "amount": 150,
+        "note": ""
+      }
+    },
+    {
+      "request": "Please refund order-1013 for 200 rupees",
+      "style": "terse command with ids and rupee amounts",
+      "expected": "process_refund",
+      "got": "process_refund",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "order id": "order-1013",
+        "amount": 200
+      },
+      "got_args": {
+        "order": "order-1013",
+        "amount": 200,
+        "note": ""
+      }
+    },
+    {
+      "request": "process refund order-1020 amount 350",
+      "style": "terse command with ids and rupee amounts",
+      "expected": "process_refund",
+      "got": "process_refund",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "order id": "order-1020",
+        "amount": 350
+      },
+      "got_args": {
+        "order": "order-1020",
+        "amount": 350,
+        "note": ""
+      }
+    },
+    {
+      "request": "Refund \u20b9120 for order-1035",
+      "style": "terse command with ids and rupee amounts",
+      "expected": "process_refund",
+      "got": "process_refund",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "order id": "order-1035",
+        "amount": 120
+      },
+      "got_args": {
+        "order": "order-1035",
+        "amount": 120,
+        "note": ""
+      }
+    },
+    {
+      "request": "refund order-1041 500 rupees",
+      "style": "terse command with ids and rupee amounts",
+      "expected": "process_refund",
+      "got": "process_refund",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "order id": "order-1041",
+        "amount": 500
+      },
+      "got_args": {
+        "order": "order-1041",
+        "amount": 500,
+        "note": ""
+      }
+    },
+    {
+      "request": "I need a refund for order-1007 for $120.00.",
+      "style": "plain and direct",
+      "expected": "process_refund",
+      "got": "process_refund",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "order id": "order-1007",
+        "amount": 120.0
+      },
+      "got_args": {
+        "order": "order-1007",
+        "amount": 120.0,
+        "note": ""
+      }
+    },
+    {
+      "request": "Cancel order-2003 and refund the full amount of 85.50.",
+      "style": "plain and direct",
+      "expected": "process_refund",
+      "got": "process_refund",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "order id": "order-2003",
+        "amount": 85.5
+      },
+      "got_args": {
+        "order": "order-2003",
+        "amount": 85.5,
+        "note": ""
+      }
+    },
+    {
+      "request": "Process a refund of 250 for order-3009.",
+      "style": "plain and direct",
+      "expected": "process_refund",
+      "got": "process_refund",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "order id": "order-3009",
+        "amount": 250
+      },
+      "got_args": {
+        "order": "order-3009",
+        "amount": 250,
+        "note": ""
+      }
+    },
+    {
+      "request": "Please refund $15.25 to order-4001.",
+      "style": "plain and direct",
+      "expected": "process_refund",
+      "got": "process_refund",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "order id": "order-4001",
+        "amount": 15.25
+      },
+      "got_args": {
+        "order": "order-4001",
+        "amount": 15.25,
+        "note": ""
+      }
+    },
+    {
+      "request": "Issue a refund of 99 for order-5002.",
+      "style": "plain and direct",
+      "expected": "process_refund",
+      "got": "process_refund",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "order id": "order-5002",
+        "amount": 99
+      },
+      "got_args": {
+        "order": "order-5002",
+        "amount": 99,
+        "note": ""
+      }
+    },
+    {
+      "request": "hey, can u check the customer with id 4578 in the customers dataset for me?",
+      "style": "casual chat message, lowercase, a typo or two",
+      "expected": "read_data",
+      "got": "read_data",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "dataset": "customers",
+        "id": 4578
+      },
+      "got_args": {
+        "dataset": "customers"
+      }
+    },
+    {
+      "request": "i need to see the order 10234, is it there in the orders dataset?",
+      "style": "casual chat message, lowercase, a typo or two",
+      "expected": "read_data",
+      "got": "read_data",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "dataset": "orders",
+        "id": 10234
+      },
+      "got_args": {
+        "dataset": "orders"
+      }
+    },
+    {
+      "request": "give me the wallet balance for user 8765 in the wallets dataset, no backup needed",
+      "style": "casual chat message, lowercase, a typo or two",
+      "expected": "read_data",
+      "got": "read_data",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "dataset": "wallets",
+        "id": 8765,
+        "backup": false
+      },
+      "got_args": {
+        "dataset": "wallets",
+        "backup": false
+      }
+    },
+    {
+      "request": "what's the status of order 54321 from the orders dataset, and keep a backup?",
+      "style": "casual chat message, lowercase, a typo or two",
+      "expected": "read_data",
+      "got": "read_data",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "dataset": "orders",
+        "id": 54321,
+        "backup": true
+      },
+      "got_args": {
+        "dataset": "orders",
+        "backup": true
+      }
+    },
+    {
+      "request": "hey, show me the customer 3092 from customers dataset, id's a bit weird but i need it",
+      "style": "casual chat message, lowercase, a typo or two",
+      "expected": "read_data",
+      "got": "read_data",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "dataset": "customers",
+        "id": 3092
+      },
+      "got_args": {
+        "dataset": "customers"
+      }
+    },
+    {
+      "request": "Delete the 15 oldest rows from the customers table, keep a backup.",
+      "style": "plain and direct",
+      "expected": "delete_records",
+      "got": "delete_records",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "table": "customers",
+        "count": 15,
+        "backup": true
+      },
+      "got_args": {
+        "table": "customers",
+        "count": 15,
+        "backup": true
+      }
+    },
+    {
+      "request": "Remove 7 entries from orders without creating a backup.",
+      "style": "plain and direct",
+      "expected": "delete_records",
+      "got": "delete_records",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "table": "orders",
+        "count": 7,
+        "backup": false
+      },
+      "got_args": {
+        "table": "orders",
+        "count": 7,
+        "backup": false
+      }
+    },
+    {
+      "request": "Please delete 3 records from the customers table and do not backup.",
+      "style": "plain and direct",
+      "expected": "delete_records",
+      "got": "delete_records",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "table": "customers",
+        "count": 3,
+        "backup": false
+      },
+      "got_args": {
+        "table": "customers",
+        "count": 3,
+        "backup": false
+      }
+    },
+    {
+      "request": "Erase 12 rows from orders table, keep a backup for safety.",
+      "style": "plain and direct",
+      "expected": "delete_records",
+      "got": "delete_records",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "table": "orders",
+        "count": 12,
+        "backup": true
+      },
+      "got_args": {
+        "table": "orders",
+        "count": 12,
+        "backup": true
+      }
+    },
+    {
+      "request": "Drop 20 entries from the customers table, no backup needed.",
+      "style": "plain and direct",
+      "expected": "delete_records",
+      "got": "delete_records",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "table": "customers",
+        "count": 20,
+        "backup": false
+      },
+      "got_args": {
+        "table": "customers",
+        "count": 20,
+        "backup": false
+      }
+    },
+    {
+      "request": "Could you please delete 15 rows from the orders table and ensure the data is backed up before proceeding?",
+      "style": "polite and formal",
+      "expected": "delete_records",
+      "got": "delete_records",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "table": "orders",
+        "count": 15,
+        "backup": true
+      },
+      "got_args": {
+        "table": "orders",
+        "count": 15,
+        "backup": true
+      }
+    },
+    {
+      "request": "I would appreciate it if you could delete 30 rows from the customers table without creating a backup.",
+      "style": "polite and formal",
+      "expected": "delete_records",
+      "got": "delete_records",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "table": "customers",
+        "count": 30,
+        "backup": false
+      },
+      "got_args": {
+        "table": "customers",
+        "count": 30,
+        "backup": false
+      }
+    },
+    {
+      "request": "Would you kindly remove 22 entries from the orders table, but do not backup the deleted records?",
+      "style": "polite and formal",
+      "expected": "delete_records",
+      "got": "delete_records",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "table": "orders",
+        "count": 22,
+        "backup": false
+      },
+      "got_args": {
+        "table": "orders",
+        "count": 22,
+        "backup": false
+      }
+    },
+    {
+      "request": "Please delete 8 rows from the customers table and keep a backup of the removed records.",
+      "style": "polite and formal",
+      "expected": "delete_records",
+      "got": "delete_records",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "table": "customers",
+        "count": 8,
+        "backup": true
+      },
+      "got_args": {
+        "table": "customers",
+        "count": 8,
+        "backup": true
+      }
+    },
+    {
+      "request": "Could you execute a deletion of 12 rows from the orders table while ensuring that a backup is not created?",
+      "style": "polite and formal",
+      "expected": "delete_records",
+      "got": "delete_records",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "table": "orders",
+        "count": 12,
+        "backup": false
+      },
+      "got_args": {
+        "table": "orders",
+        "count": 12,
+        "backup": false
+      }
+    },
+    {
+      "request": "id 42 rupees 150",
+      "style": "terse command with ids and rupee amounts",
+      "expected": "none",
+      "got": "read_data",
+      "json_ok": true,
+      "tool_ok": false,
+      "args_ok": false,
+      "valid": false,
+      "expected_args": {
+        "id": 42,
+        "rupees": 150
+      },
+      "got_args": {
+        "dataset": "wallets"
+      }
+    },
+    {
+      "request": "id 7 rupees 299",
+      "style": "terse command with ids and rupee amounts",
+      "expected": "none",
+      "got": "read_data",
+      "json_ok": true,
+      "tool_ok": false,
+      "args_ok": false,
+      "valid": false,
+      "expected_args": {
+        "id": 7,
+        "rupees": 299
+      },
+      "got_args": {
+        "dataset": "wallets"
+      }
+    },
+    {
+      "request": "id 13 rupees 50",
+      "style": "terse command with ids and rupee amounts",
+      "expected": "none",
+      "got": "read_data",
+      "json_ok": true,
+      "tool_ok": false,
+      "args_ok": false,
+      "valid": false,
+      "expected_args": {
+        "id": 13,
+        "rupees": 50
+      },
+      "got_args": {
+        "dataset": "wallets"
+      }
+    },
+    {
+      "request": "id 99 rupees 500",
+      "style": "terse command with ids and rupee amounts",
+      "expected": "none",
+      "got": "read_data",
+      "json_ok": true,
+      "tool_ok": false,
+      "args_ok": false,
+      "valid": false,
+      "expected_args": {
+        "id": 99,
+        "rupees": 500
+      },
+      "got_args": {
+        "dataset": "wallets"
+      }
+    },
+    {
+      "request": "id 21 rupees 75",
+      "style": "terse command with ids and rupee amounts",
+      "expected": "none",
+      "got": "read_data",
+      "json_ok": true,
+      "tool_ok": false,
+      "args_ok": false,
+      "valid": false,
+      "expected_args": {
+        "id": 21,
+        "rupees": 75
+      },
+      "got_args": {
+        "dataset": "wallets"
+      }
+    },
+    {
+      "request": "Email 3 team members about the upcoming sprint meeting on Monday.",
+      "style": "plain and direct",
+      "expected": "send_email",
+      "got": "send_email",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "recipients": 3,
+        "subject": "Sprint meeting this Monday"
+      },
+      "got_args": {
+        "recipients": 3,
+        "list": "team_members",
+        "subject": "Upcoming Sprint Meeting on Monday",
+        "body": ""
+      }
+    },
+    {
+      "request": "Send an email to 1 client informing them of the contract renewal deadline.",
+      "style": "plain and direct",
+      "expected": "send_email",
+      "got": "send_email",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "recipients": 1,
+        "subject": "Contract renewal deadline"
+      },
+      "got_args": {
+        "recipients": "1",
+        "list": "clients",
+        "subject": "Contract Renewal Deadline",
+        "body": ""
+      }
+    },
+    {
+      "request": "Notify 5 project stakeholders via email about the budget approval status.",
+      "style": "plain and direct",
+      "expected": "send_email",
+      "got": "send_email",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "recipients": 5,
+        "subject": "Budget approval status"
+      },
+      "got_args": {
+        "recipients": 5,
+        "list": "stakeholders",
+        "subject": "Budget Approval Status",
+        "body": "The budget has been approved."
+      }
+    },
+    {
+      "request": "Email 2 managers a reminder that their performance reviews are due this Friday.",
+      "style": "plain and direct",
+      "expected": "send_email",
+      "got": "send_email",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "recipients": 2,
+        "subject": "Performance review due this Friday"
+      },
+      "got_args": {
+        "recipients": 2,
+        "list": "managers",
+        "subject": "Reminder: Performance Reviews Due This Friday",
+        "body": ""
+      }
+    },
+    {
+      "request": "Send 4 HR team members an email with the new onboarding checklist.",
+      "style": "plain and direct",
+      "expected": "send_email",
+      "got": "send_email",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "recipients": 4,
+        "subject": "New onboarding checklist"
+      },
+      "got_args": {
+        "recipients": 4,
+        "list": "hr_team",
+        "subject": "New Onboarding Checklist",
+        "body": "Please find the new onboarding checklist attached."
+      }
+    },
+    {
+      "request": "Kindly dispatch an email to all committee members notifying them of the upcoming annual review meeting scheduled for next Friday. Please confirm the number of recipients and set the subject to 'Annual Review Meeting Notice'.",
+      "style": "polite and formal",
+      "expected": "send_email",
+      "got": "send_email",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": false,
+      "valid": true,
+      "expected_args": {
+        "recipients": 12,
+        "subject": "Annual Review Meeting Notice"
+      },
+      "got_args": {
+        "recipients": 10,
+        "list": "committee_members",
+        "subject": "Annual Review Meeting Notice",
+        "body": "Dear committee members, the annual review meeting is scheduled for next Friday. Please confirm your attendance."
+      }
+    },
+    {
+      "request": "I would appreciate your assistance in sending an email to the senior leadership team regarding the budget approval. The email should reach five recipients and the subject line must read 'Budget Approval Confirmation'.",
+      "style": "polite and formal",
+      "expected": "send_email",
+      "got": "send_email",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "recipients": 5,
+        "subject": "Budget Approval Confirmation"
+      },
+      "got_args": {
+        "recipients": 5,
+        "subject": "Budget Approval Confirmation",
+        "body": ""
+      }
+    },
+    {
+      "request": "Could you please send an email to all project stakeholders informing them of the milestone completion? The message should be sent to eight recipients and the subject should be 'Milestone Completed \u2013 Project Alpha'.",
+      "style": "polite and formal",
+      "expected": "send_email",
+      "got": "send_email",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "recipients": 8,
+        "subject": "Milestone Completed \u2013 Project Alpha"
+      },
+      "got_args": {
+        "recipients": 8,
+        "list": "stakeholders",
+        "subject": "Milestone Completed \u2013 Project Alpha",
+        "body": ""
+      }
+    },
+    {
+      "request": "Please send an email to the marketing team to announce the new product launch. Ensure the email reaches six recipients and the subject line reads 'Launch Announcement \u2013 New Product'.",
+      "style": "polite and formal",
+      "expected": "send_email",
+      "got": "send_email",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "recipients": 6,
+        "subject": "Launch Announcement \u2013 New Product"
+      },
+      "got_args": {
+        "recipients": 6,
+        "list": "marketing_team",
+        "subject": "Launch Announcement \u2013 New Product",
+        "body": ""
+      }
+    },
+    {
+      "request": "I respectfully request that you send an email to the support department informing them of the upcoming system maintenance. The email should be sent to four recipients with the subject 'Upcoming System Maintenance Notice'.",
+      "style": "polite and formal",
+      "expected": "send_email",
+      "got": "send_email",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "recipients": 4,
+        "subject": "Upcoming System Maintenance Notice"
+      },
+      "got_args": {
+        "recipients": 4,
+        "list": "support_department",
+        "subject": "Upcoming System Maintenance Notice",
+        "body": ""
+      }
+    },
+    {
+      "request": "Delete 3 customers with ids 101, 102, 103; backup: true",
+      "style": "terse command with ids and rupee amounts",
+      "expected": "delete_records",
+      "got": "delete_records",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "table": "customers",
+        "count": 3,
+        "backup": true
+      },
+      "got_args": {
+        "table": "customers",
+        "count": 3,
+        "backup": true
+      }
+    },
+    {
+      "request": "Remove 5 orders (id 5005-5010); no backup",
+      "style": "terse command with ids and rupee amounts",
+      "expected": "delete_records",
+      "got": "delete_records",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "table": "orders",
+        "count": 5,
+        "backup": false
+      },
+      "got_args": {
+        "table": "orders",
+        "count": 5,
+        "backup": false
+      }
+    },
+    {
+      "request": "Delete 2 customers (IDs 2001 and 2002); backup required",
+      "style": "terse command with ids and rupee amounts",
+      "expected": "delete_records",
+      "got": "delete_records",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "table": "customers",
+        "count": 2,
+        "backup": true
+      },
+      "got_args": {
+        "table": "customers",
+        "count": 2,
+        "backup": true
+      }
+    },
+    {
+      "request": "Erase 4 orders; keep backup",
+      "style": "terse command with ids and rupee amounts",
+      "expected": "delete_records",
+      "got": "delete_records",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "table": "orders",
+        "count": 4,
+        "backup": true
+      },
+      "got_args": {
+        "table": "orders",
+        "count": 4,
+        "backup": true
+      }
+    },
+    {
+      "request": "Drop 1 customer record with id 301; no backup needed",
+      "style": "terse command with ids and rupee amounts",
+      "expected": "delete_records",
+      "got": "delete_records",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "table": "customers",
+        "count": 1,
+        "backup": false
+      },
+      "got_args": {
+        "table": "customers",
+        "count": 1,
+        "backup": false
+      }
+    },
+    {
+      "request": "Please transfer 2500 rupees to wallet ID W12345.",
+      "style": "plain and direct",
+      "expected": "transfer_funds",
+      "got": "transfer_funds",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "amount": 2500,
+        "to": "W12345"
+      },
+      "got_args": {
+        "amount": 2500,
+        "to": "W12345",
+        "note": ""
+      }
+    },
+    {
+      "request": "Move 12000 rupees to vendor V9876 for the upcoming order.",
+      "style": "plain and direct",
+      "expected": "transfer_funds",
+      "got": "transfer_funds",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "amount": 12000,
+        "to": "V9876"
+      },
+      "got_args": {
+        "amount": 12000,
+        "to": "vendor-V9876",
+        "note": "for order"
+      }
+    },
+    {
+      "request": "Send 5300 rupees to user U54321 as a gift.",
+      "style": "plain and direct",
+      "expected": "transfer_funds",
+      "got": "transfer_funds",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "amount": 5300,
+        "to": "U54321"
+      },
+      "got_args": {
+        "amount": 5300,
+        "to": "wallet-U54321",
+        "note": "gift"
+      }
+    },
+    {
+      "request": "Transfer 8900 rupees to merchant M11223 to settle the invoice.",
+      "style": "plain and direct",
+      "expected": "transfer_funds",
+      "got": "transfer_funds",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "amount": 8900,
+        "to": "M11223"
+      },
+      "got_args": {
+        "amount": 8900,
+        "to": "merchant-M11223",
+        "note": "Settling invoice"
+      }
+    },
+    {
+      "request": "Move 15000 rupees to wallet ID W67890 for the upcoming event.",
+      "style": "plain and direct",
+      "expected": "transfer_funds",
+      "got": "transfer_funds",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "amount": 15000,
+        "to": "W67890"
+      },
+      "got_args": {
+        "amount": 15000,
+        "to": "wallet-W67890",
+        "note": "upcoming event"
+      }
+    },
+    {
+      "request": "Set order 1024 status to 'shipped'",
+      "style": "terse command with ids and rupee amounts",
+      "expected": "update_record",
+      "got": "update_record",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": false,
+      "valid": true,
+      "expected_args": {
+        "table": "orders",
+        "id": 1024,
+        "field": "status",
+        "value": "shipped"
+      },
+      "got_args": {
+        "table": "orders",
+        "id": "order-1024",
+        "field": "status",
+        "value": "shipped"
+      }
+    },
+    {
+      "request": "Update customer 501 balance to 2500 rupees",
+      "style": "terse command with ids and rupee amounts",
+      "expected": "update_record",
+      "got": "update_record",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "table": "customers",
+        "id": 501,
+        "field": "balance",
+        "value": 2500
+      },
+      "got_args": {
+        "table": "customers",
+        "id": "501",
+        "field": "balance",
+        "value": "2500"
+      }
+    },
+    {
+      "request": "Change order 876 refund_amount to 120 rupees",
+      "style": "terse command with ids and rupee amounts",
+      "expected": "update_record",
+      "got": "update_record",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": false,
+      "valid": true,
+      "expected_args": {
+        "table": "orders",
+        "id": 876,
+        "field": "refund_amount",
+        "value": 120
+      },
+      "got_args": {
+        "table": "orders",
+        "id": "order-876",
+        "field": "refund_amount",
+        "value": "120"
+      }
+    },
+    {
+      "request": "Set customer 302 email_verified to false",
+      "style": "terse command with ids and rupee amounts",
+      "expected": "update_record",
+      "got": "update_record",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": false,
+      "valid": true,
+      "expected_args": {
+        "table": "customers",
+        "id": 302,
+        "field": "email_verified",
+        "value": false
+      },
+      "got_args": {
+        "table": "customers",
+        "id": "customer-302",
+        "field": "email_verified",
+        "value": "false"
+      }
+    },
+    {
+      "request": "Update order 2333 total_amount to 4800 rupees",
+      "style": "terse command with ids and rupee amounts",
+      "expected": "update_record",
+      "got": "update_record",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": false,
+      "valid": true,
+      "expected_args": {
+        "table": "orders",
+        "id": 2333,
+        "field": "total_amount",
+        "value": 4800
+      },
+      "got_args": {
+        "table": "orders",
+        "id": "order-2333",
+        "field": "total_amount",
+        "value": "4800"
+      }
+    },
+    {
+      "request": "Change the shipping address for order 457 to '321 Oak St, Springfield, IL'.",
+      "style": "plain and direct",
+      "expected": "update_record",
+      "got": "update_record",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": false,
+      "valid": true,
+      "expected_args": {
+        "table": "orders",
+        "id": 457,
+        "field": "shipping_address",
+        "value": "321 Oak St, Springfield, IL"
+      },
+      "got_args": {
+        "table": "orders",
+        "id": "order-457",
+        "field": "shipping_address",
+        "value": "321 Oak St, Springfield, IL"
+      }
+    },
+    {
+      "request": "Set the discount amount of customer 1023 to 15.50.",
+      "style": "plain and direct",
+      "expected": "update_record",
+      "got": "update_record",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "table": "customers",
+        "id": 1023,
+        "field": "discount",
+        "value": 15.5
+      },
+      "got_args": {
+        "table": "customers",
+        "id": "1023",
+        "field": "discount",
+        "value": "15.50"
+      }
+    },
+    {
+      "request": "Mark order 88 as shipped.",
+      "style": "plain and direct",
+      "expected": "update_record",
+      "got": "update_record",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": false,
+      "valid": true,
+      "expected_args": {
+        "table": "orders",
+        "id": 88,
+        "field": "status",
+        "value": "shipped"
+      },
+      "got_args": {
+        "table": "orders",
+        "id": "order-88",
+        "field": "status",
+        "value": "shipped"
+      }
+    },
+    {
+      "request": "Reset the loyalty points of customer 760 to 0.",
+      "style": "plain and direct",
+      "expected": "update_record",
+      "got": "update_record",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": false,
+      "valid": true,
+      "expected_args": {
+        "table": "customers",
+        "id": 760,
+        "field": "loyalty_points",
+        "value": 0
+      },
+      "got_args": {
+        "table": "customers",
+        "id": "customer-760",
+        "field": "loyalty_points",
+        "value": "0"
+      }
+    },
+    {
+      "request": "Change the total price of order 213 to 89.99.",
+      "style": "plain and direct",
+      "expected": "update_record",
+      "got": "update_record",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": false,
+      "valid": true,
+      "expected_args": {
+        "table": "orders",
+        "id": 213,
+        "field": "total_price",
+        "value": 89.99
+      },
+      "got_args": {
+        "table": "orders",
+        "id": "order-213",
+        "field": "total_price",
+        "value": "89.99"
+      }
+    },
+    {
+      "request": "hey can u transfer 1500 rupees to wallet 9876 for my friend? thanks",
+      "style": "casual chat message, lowercase, a typo or two",
+      "expected": "transfer_funds",
+      "got": "transfer_funds",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": false,
+      "valid": true,
+      "expected_args": {
+        "amount": 1500,
+        "to": 9876
+      },
+      "got_args": {
+        "amount": 1500,
+        "to": "wallet-9876",
+        "note": "for my friend"
+      }
+    },
+    {
+      "request": "i need to send 250 rupees over to vendor 4321 for that order, plz do it",
+      "style": "casual chat message, lowercase, a typo or two",
+      "expected": "transfer_funds",
+      "got": "transfer_funds",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": false,
+      "valid": true,
+      "expected_args": {
+        "amount": 250,
+        "to": 4321
+      },
+      "got_args": {
+        "amount": 250,
+        "to": "vendor-4321",
+        "note": "for order"
+      }
+    },
+    {
+      "request": "do a quick transfer of 999 rupees to wallet 1112, my rent is due tomorrow",
+      "style": "casual chat message, lowercase, a typo or two",
+      "expected": "transfer_funds",
+      "got": "transfer_funds",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": false,
+      "valid": true,
+      "expected_args": {
+        "amount": 999,
+        "to": 1112
+      },
+      "got_args": {
+        "amount": 999,
+        "to": "wallet-1112",
+        "note": "rent due tomorrow"
+      }
+    },
+    {
+      "request": "please send 500 rupees to vendor 6789 for the tickets, no rush but thanks",
+      "style": "casual chat message, lowercase, a typo or two",
+      "expected": "transfer_funds",
+      "got": "transfer_funds",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": false,
+      "valid": true,
+      "expected_args": {
+        "amount": 500,
+        "to": 6789
+      },
+      "got_args": {
+        "amount": 500,
+        "to": "vendor-6789",
+        "note": "tickets"
+      }
+    },
+    {
+      "request": "transfer 3000 rupees to wallet 5555 for the new phone, urgent pls",
+      "style": "casual chat message, lowercase, a typo or two",
+      "expected": "transfer_funds",
+      "got": "transfer_funds",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": false,
+      "valid": true,
+      "expected_args": {
+        "amount": 3000,
+        "to": 5555
+      },
+      "got_args": {
+        "amount": 3000,
+        "to": "wallet-5555",
+        "note": "new phone"
+      }
+    },
+    {
+      "request": "hey, can you export all customers to google drive pls?",
+      "style": "casual chat message, lowercase, a typo or two",
+      "expected": "export_data",
+      "got": "export_data",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "dataset": "customers",
+        "destination": "google drive"
+      },
+      "got_args": {
+        "dataset": "customers",
+        "destination": "google drive",
+        "note": ""
+      }
+    },
+    {
+      "request": "i need the orders from last month exported to s3 bucket, can u do that?",
+      "style": "casual chat message, lowercase, a typo or two",
+      "expected": "export_data",
+      "got": "export_data",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "dataset": "orders",
+        "destination": "s3 bucket"
+      },
+      "got_args": {
+        "dataset": "orders",
+        "destination": "s3 bucket",
+        "note": "orders from last month"
+      }
+    },
+    {
+      "request": "export the new customer list to local backup, no extra files",
+      "style": "casual chat message, lowercase, a typo or two",
+      "expected": "export_data",
+      "got": "export_data",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "dataset": "customers",
+        "destination": "local backup"
+      },
+      "got_args": {
+        "dataset": "customers",
+        "destination": "local backup",
+        "note": ""
+      }
+    },
+    {
+      "request": "please dump all orders 5001-5020 to dropbox for the audit",
+      "style": "casual chat message, lowercase, a typo or two",
+      "expected": "export_data",
+      "got": "export_data",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "dataset": "orders",
+        "destination": "dropbox"
+      },
+      "got_args": {
+        "dataset": "orders",
+        "destination": "dropbox",
+        "note": "audit"
+      }
+    },
+    {
+      "request": "can u send the recent customers to the sales team via email backup",
+      "style": "casual chat message, lowercase, a typo or two",
+      "expected": "export_data",
+      "got": "send_email",
+      "json_ok": true,
+      "tool_ok": false,
+      "args_ok": false,
+      "valid": false,
+      "expected_args": {
+        "dataset": "customers",
+        "destination": "email backup"
+      },
+      "got_args": {
+        "recipients": 1,
+        "list": "sales_team",
+        "subject": "Recent Customers",
+        "body": "Please find the recent customers below.\n\n[insert data here]"
+      }
+    },
+    {
+      "request": "Could you kindly read the customers data set for me?",
+      "style": "polite and formal",
+      "expected": "read_data",
+      "got": "read_data",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "dataset": "customers"
+      },
+      "got_args": {
+        "dataset": "customers"
+      }
+    },
+    {
+      "request": "I would appreciate it if you could read the orders data for order ID 10293 and confirm the total amount.",
+      "style": "polite and formal",
+      "expected": "read_data",
+      "got": "read_data",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "dataset": "orders",
+        "order_id": 10293,
+        "amount": 250.75
+      },
+      "got_args": {
+        "dataset": "orders"
+      }
+    },
+    {
+      "request": "Would you please read the wallets data for user ID 5678 and note the balance of 3,200.00?",
+      "style": "polite and formal",
+      "expected": "read_data",
+      "got": "read_data",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "dataset": "wallets",
+        "user_id": 5678,
+        "balance": 3200.0
+      },
+      "got_args": {
+        "dataset": "wallets",
+        "id": "5678",
+        "fields": "[\"balance\"]"
+      }
+    },
+    {
+      "request": "I request that you read the customers data set to retrieve information about customer ID 31416.",
+      "style": "polite and formal",
+      "expected": "read_data",
+      "got": "read_data",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "dataset": "customers",
+        "customer_id": 31416
+      },
+      "got_args": {
+        "dataset": "customers"
+      }
+    },
+    {
+      "request": "Could you please read the orders data for order ID 20870 and check that the shipped amount equals 1,050.00?",
+      "style": "polite and formal",
+      "expected": "read_data",
+      "got": "read_data",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "dataset": "orders",
+        "order_id": 20870,
+        "amount": 1050.0
+      },
+      "got_args": {
+        "dataset": "orders",
+        "id": "order-20870",
+        "fields": "shipped"
+      }
+    },
+    {
+      "request": "Good afternoon, could you share your thoughts on the significance of the color blue in contemporary art?",
+      "style": "polite and formal",
+      "expected": "none",
+      "got": "none",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {},
+      "got_args": {}
+    },
+    {
+      "request": "I would like to hear a brief anecdote from your experience about a memorable day at work.",
+      "style": "polite and formal",
+      "expected": "none",
+      "got": "none",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {},
+      "got_args": {}
+    },
+    {
+      "request": "Would you mind telling me how you feel about the weather in Paris today?",
+      "style": "polite and formal",
+      "expected": "none",
+      "got": "none",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {},
+      "got_args": {}
+    },
+    {
+      "request": "Please provide a summary of your favorite childhood memory.",
+      "style": "polite and formal",
+      "expected": "none",
+      "got": "none",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {},
+      "got_args": {}
+    },
+    {
+      "request": "Could you describe the taste of your favorite dessert in vivid detail?",
+      "style": "polite and formal",
+      "expected": "none",
+      "got": "none",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {},
+      "got_args": {}
+    },
+    {
+      "request": "Could you please export the entire customers dataset to our secure data lake at s3://company-data/customer-backup?",
+      "style": "polite and formal",
+      "expected": "export_data",
+      "got": "export_data",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "dataset": "customers",
+        "destination": "s3://company-data/customer-backup"
+      },
+      "got_args": {
+        "dataset": "customers",
+        "destination": "s3://company-data/customer-backup",
+        "note": ""
+      }
+    },
+    {
+      "request": "I would appreciate if you could export orders with IDs ranging from 1001 to 1020 to the backup location at /mnt/backups/orders_1001_1020.bak, ensuring that the export is backed up.",
+      "style": "polite and formal",
+      "expected": "export_data",
+      "got": "export_data",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "dataset": "orders",
+        "destination": "/mnt/backups/orders_1001_1020.bak",
+        "backup": true
+      },
+      "got_args": {
+        "dataset": "orders",
+        "destination": "/mnt/backups/orders_1001_1020.bak",
+        "backup": true,
+        "note": ""
+      }
+    },
+    {
+      "request": "Please export the customers data for the year 2023 to the external FTP server at ftp://archive.example.com/2023/customers.csv, without any additional backup.",
+      "style": "polite and formal",
+      "expected": "export_data",
+      "got": "export_data",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "dataset": "customers",
+        "destination": "ftp://archive.example.com/2023/customers.csv"
+      },
+      "got_args": {
+        "dataset": "customers",
+        "destination": "ftp://archive.example.com/2023/customers.csv",
+        "note": ""
+      }
+    },
+    {
+      "request": "Could you kindly export orders for the quarter Q1 2024 to the cloud bucket at gs://sales-data/q1-2024/orders.json, and enable the backup option?",
+      "style": "polite and formal",
+      "expected": "export_data",
+      "got": "export_data",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "dataset": "orders",
+        "destination": "gs://sales-data/q1-2024/orders.json",
+        "backup": true
+      },
+      "got_args": {
+        "dataset": "orders",
+        "destination": "gs://sales-data/q1-2024/orders.json",
+        "backup": true,
+        "note": "Q1 2024 orders"
+      }
+    },
+    {
+      "request": "I request the export of customers who registered after 2025-01-01 to the local archive at /var/lib/archive/customers_recent.csv, no backup required.",
+      "style": "polite and formal",
+      "expected": "export_data",
+      "got": "export_data",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "dataset": "customers",
+        "destination": "/var/lib/archive/customers_recent.csv"
+      },
+      "got_args": {
+        "dataset": "customers",
+        "destination": "/var/lib/archive/customers_recent.csv",
+        "note": "customers who registered after 2025-01-01"
+      }
+    },
+    {
+      "request": "Export the customers dataset to the cloud backup.",
+      "style": "plain and direct",
+      "expected": "export_data",
+      "got": "export_data",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "dataset": "customers",
+        "destination": "cloud backup"
+      },
+      "got_args": {
+        "dataset": "customers",
+        "destination": "cloud backup",
+        "note": ""
+      }
+    },
+    {
+      "request": "Send the orders table to our local server.",
+      "style": "plain and direct",
+      "expected": "export_data",
+      "got": "export_data",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "dataset": "orders",
+        "destination": "local server"
+      },
+      "got_args": {
+        "dataset": "orders",
+        "destination": "local server",
+        "note": ""
+      }
+    },
+    {
+      "request": "Backup customers to the external drive.",
+      "style": "plain and direct",
+      "expected": "export_data",
+      "got": "export_data",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "dataset": "customers",
+        "destination": "external drive"
+      },
+      "got_args": {
+        "dataset": "customers",
+        "destination": "external drive",
+        "note": ""
+      }
+    },
+    {
+      "request": "Export orders to the reporting database.",
+      "style": "plain and direct",
+      "expected": "export_data",
+      "got": "export_data",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "dataset": "orders",
+        "destination": "reporting database"
+      },
+      "got_args": {
+        "dataset": "orders",
+        "destination": "reporting database",
+        "note": ""
+      }
+    },
+    {
+      "request": "Dump the customers dataset to the archive repository.",
+      "style": "plain and direct",
+      "expected": "export_data",
+      "got": "export_data",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "dataset": "customers",
+        "destination": "archive repository"
+      },
+      "got_args": {
+        "dataset": "customers",
+        "destination": "archive repository",
+        "note": ""
+      }
+    },
+    {
+      "request": "Notify 101 and 102 about \u20b91500",
+      "style": "terse command with ids and rupee amounts",
+      "expected": "send_email",
+      "got": "send_email",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "recipients": 2,
+        "count": 2,
+        "subject": "Payment Received"
+      },
+      "got_args": {
+        "recipients": 2,
+        "list": "order-1007",
+        "subject": "Order Update",
+        "body": "Your order has been updated. Please check your account for details."
+      }
+    },
+    {
+      "request": "Alert 203, 204, 205: \u20b92000 pending",
+      "style": "terse command with ids and rupee amounts",
+      "expected": "send_email",
+      "got": "none",
+      "json_ok": true,
+      "tool_ok": false,
+      "args_ok": false,
+      "valid": false,
+      "expected_args": {
+        "recipients": 3,
+        "count": 3,
+        "subject": "Payment Overdue"
+      },
+      "got_args": {}
+    },
+    {
+      "request": "Send receipt to 305, 306: \u20b9750",
+      "style": "terse command with ids and rupee amounts",
+      "expected": "send_email",
+      "got": "send_email",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "recipients": 2,
+        "count": 2,
+        "subject": "Purchase Confirmation"
+      },
+      "got_args": {
+        "recipients": 2,
+        "list": "receipts",
+        "subject": "Receipt",
+        "body": "Dear customer, your receipt is attached. \u20b9750"
+      }
+    },
+    {
+      "request": "Update 401 on \u20b91200 transaction",
+      "style": "terse command with ids and rupee amounts",
+      "expected": "send_email",
+      "got": "update_record",
+      "json_ok": true,
+      "tool_ok": false,
+      "args_ok": false,
+      "valid": false,
+      "expected_args": {
+        "recipients": 1,
+        "count": 1,
+        "subject": "Transaction Update"
+      },
+      "got_args": {
+        "table": "orders",
+        "id": "order-401",
+        "field": "transaction",
+        "value": "\u20b91200"
+      }
+    },
+    {
+      "request": "Inform 501, 502, 503: \u20b95000 invoice",
+      "style": "terse command with ids and rupee amounts",
+      "expected": "send_email",
+      "got": "send_email",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "recipients": 3,
+        "count": 3,
+        "subject": "Invoice Issued"
+      },
+      "got_args": {
+        "recipients": 3,
+        "list": "invoice_list",
+        "subject": "Invoice for \u20b95000",
+        "body": "Dear customers, your invoice for \u20b95000 is attached."
+      }
+    },
+    {
+      "request": "hey ai, can u change the status of order 237 to shipped pls",
+      "style": "casual chat message, lowercase, a typo or two",
+      "expected": "update_record",
+      "got": "update_record",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": false,
+      "valid": true,
+      "expected_args": {
+        "table": "orders",
+        "id": 237,
+        "field": "status",
+        "value": "shipped"
+      },
+      "got_args": {
+        "table": "orders",
+        "id": "order-237",
+        "field": "status",
+        "value": "shipped"
+      }
+    },
+    {
+      "request": "update customer 102's email to new_email@example.com, thanks",
+      "style": "casual chat message, lowercase, a typo or two",
+      "expected": "update_record",
+      "got": "update_record",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": false,
+      "valid": true,
+      "expected_args": {
+        "table": "customers",
+        "id": 102,
+        "field": "email",
+        "value": "new_email@example.com"
+      },
+      "got_args": {
+        "table": "customers",
+        "id": "customer-102",
+        "field": "email",
+        "value": "new_email@example.com"
+      }
+    },
+    {
+      "request": "i need to bump the discount on order 504 to 15%",
+      "style": "casual chat message, lowercase, a typo or two",
+      "expected": "update_record",
+      "got": "update_record",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": false,
+      "valid": true,
+      "expected_args": {
+        "table": "orders",
+        "id": 504,
+        "field": "discount",
+        "value": 15
+      },
+      "got_args": {
+        "table": "orders",
+        "id": "order-504",
+        "field": "discount",
+        "value": "15"
+      }
+    },
+    {
+      "request": "fix cust 88's phone number to 555-1234",
+      "style": "casual chat message, lowercase, a typo or two",
+      "expected": "update_record",
+      "got": "update_record",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": false,
+      "valid": true,
+      "expected_args": {
+        "table": "customers",
+        "id": 88,
+        "field": "phone",
+        "value": "555-1234"
+      },
+      "got_args": {
+        "table": "customers",
+        "id": "cust 88",
+        "field": "phone",
+        "value": "555-1234"
+      }
+    },
+    {
+      "request": "set the total of order 309 to 250.75",
+      "style": "casual chat message, lowercase, a typo or two",
+      "expected": "update_record",
+      "got": "update_record",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": false,
+      "valid": true,
+      "expected_args": {
+        "table": "orders",
+        "id": 309,
+        "field": "total",
+        "value": 250.75
+      },
+      "got_args": {
+        "table": "orders",
+        "id": "order-309",
+        "field": "total",
+        "value": "250.75"
+      }
+    },
+    {
+      "request": "hey can u delete 10 rows from customers for me pls?",
+      "style": "casual chat message, lowercase, a typo or two",
+      "expected": "delete_records",
+      "got": "delete_records",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "table": "customers",
+        "count": 10,
+        "backup": false
+      },
+      "got_args": {
+        "table": "customers",
+        "count": 10,
+        "backup": false
+      }
+    },
+    {
+      "request": "i need 25 orders removed right now, no backup needed.",
+      "style": "casual chat message, lowercase, a typo or two",
+      "expected": "delete_records",
+      "got": "delete_records",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "table": "orders",
+        "count": 25,
+        "backup": false
+      },
+      "got_args": {
+        "table": "orders",
+        "count": 25,
+        "backup": false
+      }
+    },
+    {
+      "request": "could u please wipe out 7 rows from customers and keep a backup?",
+      "style": "casual chat message, lowercase, a typo or two",
+      "expected": "delete_records",
+      "got": "delete_records",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "table": "customers",
+        "count": 7,
+        "backup": true
+      },
+      "got_args": {
+        "table": "customers",
+        "count": 7,
+        "backup": true
+      }
+    },
+    {
+      "request": "remove 15 orders for me, i dont need a backup copy.",
+      "style": "casual chat message, lowercase, a typo or two",
+      "expected": "delete_records",
+      "got": "delete_records",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "table": "orders",
+        "count": 15,
+        "backup": false
+      },
+      "got_args": {
+        "table": "orders",
+        "count": 15,
+        "backup": false
+      }
+    },
+    {
+      "request": "delete 3 customers rows and backup the data, thanks!",
+      "style": "casual chat message, lowercase, a typo or two",
+      "expected": "delete_records",
+      "got": "delete_records",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "table": "customers",
+        "count": 3,
+        "backup": true
+      },
+      "got_args": {
+        "table": "customers",
+        "count": 3,
+        "backup": true
+      }
+    },
+    {
+      "request": "transfer 2500 rupees to wallet 987654",
+      "style": "terse command with ids and rupee amounts",
+      "expected": "transfer_funds",
+      "got": "transfer_funds",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": false,
+      "valid": true,
+      "expected_args": {
+        "amount": 2500,
+        "to": 987654
+      },
+      "got_args": {
+        "amount": 2500,
+        "to": "wallet-987654",
+        "note": ""
+      }
+    },
+    {
+      "request": "move 480 rupees to vendor 54321",
+      "style": "terse command with ids and rupee amounts",
+      "expected": "transfer_funds",
+      "got": "transfer_funds",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": false,
+      "valid": true,
+      "expected_args": {
+        "amount": 480,
+        "to": 54321
+      },
+      "got_args": {
+        "amount": 480,
+        "to": "vendor-54321",
+        "note": ""
+      }
+    },
+    {
+      "request": "send 12000 rupees to wallet 111222",
+      "style": "terse command with ids and rupee amounts",
+      "expected": "transfer_funds",
+      "got": "transfer_funds",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": false,
+      "valid": true,
+      "expected_args": {
+        "amount": 12000,
+        "to": 111222
+      },
+      "got_args": {
+        "amount": 12000,
+        "to": "wallet-111222",
+        "note": ""
+      }
+    },
+    {
+      "request": "transfer_funds 3500 rupees to 777888",
+      "style": "terse command with ids and rupee amounts",
+      "expected": "transfer_funds",
+      "got": "transfer_funds",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": false,
+      "valid": true,
+      "expected_args": {
+        "amount": 3500,
+        "to": 777888
+      },
+      "got_args": {
+        "amount": 3500,
+        "to": "wallet-777888",
+        "note": ""
+      }
+    },
+    {
+      "request": "move 900 rupees to vendor 444555",
+      "style": "terse command with ids and rupee amounts",
+      "expected": "transfer_funds",
+      "got": "transfer_funds",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": false,
+      "valid": true,
+      "expected_args": {
+        "amount": 900,
+        "to": 444555
+      },
+      "got_args": {
+        "amount": 900,
+        "to": "vendor-444555",
+        "note": ""
+      }
+    },
+    {
+      "request": "hey, can u shoot an email to the team about the quarterly meeting? need it sent to 5 people with the subject 'qtrly meetin update'",
+      "style": "casual chat message, lowercase, a typo or two",
+      "expected": "send_email",
+      "got": "send_email",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "recipients": 5,
+        "subject": "qtrly meetin update"
+      },
+      "got_args": {
+        "recipients": 5,
+        "subject": "qtrly meetin update",
+        "body": ""
+      }
+    },
+    {
+      "request": "i gotta email 3 coworkers to remind them about the budget review tomorrow. the subject should read 'budget review reminder'",
+      "style": "casual chat message, lowercase, a typo or two",
+      "expected": "send_email",
+      "got": "send_email",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "recipients": 3,
+        "subject": "budget review reminder"
+      },
+      "got_args": {
+        "recipients": 3,
+        "list": "coworkers",
+        "subject": "budget review reminder",
+        "body": ""
+      }
+    },
+    {
+      "request": "send an email to 7 folks in the sales dept about the new product launch. subject: 'new product launch details'",
+      "style": "casual chat message, lowercase, a typo or two",
+      "expected": "send_email",
+      "got": "send_email",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "recipients": 7,
+        "subject": "new product launch details"
+      },
+      "got_args": {
+        "recipients": 7,
+        "list": "salesdept",
+        "subject": "new product launch details",
+        "body": ""
+      }
+    },
+    {
+      "request": "could you email 4 people in ops about the schedule change? use subject 'ops schedule update'",
+      "style": "casual chat message, lowercase, a typo or two",
+      "expected": "send_email",
+      "got": "send_email",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "recipients": 4,
+        "subject": "ops schedule update"
+      },
+      "got_args": {
+        "recipients": 4,
+        "list": "ops",
+        "subject": "ops schedule update",
+        "body": ""
+      }
+    },
+    {
+      "request": "please send an email to 6 marketing peeps with the subject 'marketing campaign kickoff'",
+      "style": "casual chat message, lowercase, a typo or two",
+      "expected": "send_email",
+      "got": "send_email",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "recipients": 6,
+        "subject": "marketing campaign kickoff"
+      },
+      "got_args": {
+        "recipients": 6,
+        "list": "marketing",
+        "subject": "marketing campaign kickoff",
+        "body": ""
+      }
+    },
+    {
+      "request": "check 1234 orders total 5678 rupees",
+      "style": "terse command with ids and rupee amounts",
+      "expected": "read_data",
+      "got": "read_data",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": false,
+      "valid": true,
+      "expected_args": {
+        "dataset": 1234,
+        "amount": 5678
+      },
+      "got_args": {
+        "dataset": "orders"
+      }
+    },
+    {
+      "request": "list 9876 customers amount 4321 rupees",
+      "style": "terse command with ids and rupee amounts",
+      "expected": "read_data",
+      "got": "read_data",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": false,
+      "valid": true,
+      "expected_args": {
+        "dataset": 9876,
+        "amount": 4321
+      },
+      "got_args": {
+        "dataset": "customers",
+        "amount": 9876,
+        "rupees": 4321
+      }
+    },
+    {
+      "request": "verify 5555 wallets 1111 rupees",
+      "style": "terse command with ids and rupee amounts",
+      "expected": "read_data",
+      "got": "read_data",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": false,
+      "valid": true,
+      "expected_args": {
+        "dataset": 5555,
+        "amount": 1111
+      },
+      "got_args": {
+        "dataset": "wallets"
+      }
+    },
+    {
+      "request": "scan 2222 orders 3333 rupees",
+      "style": "terse command with ids and rupee amounts",
+      "expected": "read_data",
+      "got": "read_data",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": false,
+      "valid": true,
+      "expected_args": {
+        "dataset": 2222,
+        "amount": 3333
+      },
+      "got_args": {
+        "dataset": "orders"
+      }
+    },
+    {
+      "request": "audit 7777 customers 8888 rupees",
+      "style": "terse command with ids and rupee amounts",
+      "expected": "read_data",
+      "got": "none",
+      "json_ok": true,
+      "tool_ok": false,
+      "args_ok": false,
+      "valid": false,
+      "expected_args": {
+        "dataset": 7777,
+        "amount": 8888
+      },
+      "got_args": {}
+    },
+    {
+      "request": "Show me the customers with ids 12, 23, 34",
+      "style": "plain and direct",
+      "expected": "read_data",
+      "got": "read_data",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "dataset": "customers",
+        "ids": [
+          12,
+          23,
+          34
+        ]
+      },
+      "got_args": {
+        "dataset": "customers"
+      }
+    },
+    {
+      "request": "What orders were placed by customer 7 between 2024-01-01 and 2024-01-31?",
+      "style": "plain and direct",
+      "expected": "read_data",
+      "got": "read_data",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "dataset": "orders",
+        "customer_id": 7,
+        "date_range": {
+          "start": "2024-01-01",
+          "end": "2024-01-31"
+        }
+      },
+      "got_args": {
+        "dataset": "orders",
+        "note": "filter by customer 7 and date range"
+      }
+    },
+    {
+      "request": "List wallet balances for users 5, 8, 9, backup true",
+      "style": "plain and direct",
+      "expected": "read_data",
+      "got": "read_data",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "dataset": "wallets",
+        "ids": [
+          5,
+          8,
+          9
+        ],
+        "backup": true
+      },
+      "got_args": {
+        "dataset": "wallets",
+        "backup": true,
+        "count": 3,
+        "note": "List wallet balances for users 5, 8, 9"
+      }
+    },
+    {
+      "request": "Find the order total for order id 1024 and also backup the data",
+      "style": "plain and direct",
+      "expected": "read_data",
+      "got": "read_data",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "dataset": "orders",
+        "order_ids": [
+          1024
+        ],
+        "backup": true
+      },
+      "got_args": {
+        "dataset": "orders",
+        "backup": true
+      }
+    },
+    {
+      "request": "Retrieve all customers older than 60",
+      "style": "plain and direct",
+      "expected": "read_data",
+      "got": "read_data",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "dataset": "customers",
+        "age_gt": 60
+      },
+      "got_args": {
+        "dataset": "customers"
+      }
+    },
+    {
+      "request": "Kindly update the phone number for the customer with ID 102 to the new number 555-0198.",
+      "style": "polite and formal",
+      "expected": "update_record",
+      "got": "update_record",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": false,
+      "valid": true,
+      "expected_args": {
+        "table": "customers",
+        "id": 102,
+        "field": "phone",
+        "value": "555-0198"
+      },
+      "got_args": {
+        "table": "customers",
+        "id": "102",
+        "field": "phone_number",
+        "value": "555-0198"
+      }
+    },
+    {
+      "request": "Please change the status of order 7843 to 'shipped' in the orders table.",
+      "style": "polite and formal",
+      "expected": "update_record",
+      "got": "update_record",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": false,
+      "valid": true,
+      "expected_args": {
+        "table": "orders",
+        "id": 7843,
+        "field": "status",
+        "value": "shipped"
+      },
+      "got_args": {
+        "table": "orders",
+        "id": "order-7843",
+        "field": "status",
+        "value": "shipped"
+      }
+    },
+    {
+      "request": "Could you modify the delivery address for customer 56 to '321 Maple Avenue, Springfield'?",
+      "style": "polite and formal",
+      "expected": "update_record",
+      "got": "update_record",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": false,
+      "valid": true,
+      "expected_args": {
+        "table": "customers",
+        "id": 56,
+        "field": "address",
+        "value": "321 Maple Avenue, Springfield"
+      },
+      "got_args": {
+        "table": "customers",
+        "id": "customer-56",
+        "field": "delivery_address",
+        "value": "321 Maple Avenue, Springfield"
+      }
+    },
+    {
+      "request": "I would appreciate it if you could set the total amount of order 9201 to 249.99.",
+      "style": "polite and formal",
+      "expected": "update_record",
+      "got": "update_record",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": false,
+      "valid": true,
+      "expected_args": {
+        "table": "orders",
+        "id": 9201,
+        "field": "total",
+        "value": 249.99
+      },
+      "got_args": {
+        "table": "orders",
+        "id": "order-9201",
+        "field": "total",
+        "value": "249.99"
+      }
+    },
+    {
+      "request": "May I ask you to change the email address of customer 13 to 'new.email@example.com'?",
+      "style": "polite and formal",
+      "expected": "update_record",
+      "got": "update_record",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": false,
+      "valid": true,
+      "expected_args": {
+        "table": "customers",
+        "id": 13,
+        "field": "email",
+        "value": "new.email@example.com"
+      },
+      "got_args": {
+        "table": "customers",
+        "id": "customer-13",
+        "field": "email",
+        "value": "new.email@example.com"
+      }
+    },
+    {
+      "request": "hey, can u tell me what the weather will be like tomorrow? i'm planning a picnic but not sure if it s gonna rain",
+      "style": "casual chat message, lowercase, a typo or two",
+      "expected": "none",
+      "got": "none",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {},
+      "got_args": {}
+    },
+    {
+      "request": "i heard the new movie coming out next week, any thoughts on it? not sure if i should watch it or not",
+      "style": "casual chat message, lowercase, a typo or two",
+      "expected": "none",
+      "got": "none",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {},
+      "got_args": {}
+    },
+    {
+      "request": "do you think cats are better than dogs? i just got a new cat and i'm curious",
+      "style": "casual chat message, lowercase, a typo or two",
+      "expected": "none",
+      "got": "none",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {},
+      "got_args": {}
+    },
+    {
+      "request": "my friend told me a joke that made me laugh, can u guess the punchline?",
+      "style": "casual chat message, lowercase, a typo or two",
+      "expected": "none",
+      "got": "none",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {},
+      "got_args": {}
+    },
+    {
+      "request": "what's your opinion on the best coffee place in town? i need a good spot to work",
+      "style": "casual chat message, lowercase, a typo or two",
+      "expected": "none",
+      "got": "none",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {},
+      "got_args": {}
+    },
+    {
+      "request": "Could you please refund the amount for order-1023 with the full charged amount?",
+      "style": "polite and formal",
+      "expected": "process_refund",
+      "got": "process_refund",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": false,
+      "valid": true,
+      "expected_args": {
+        "order_id": "order-1023",
+        "amount": 59.99
+      },
+      "got_args": {
+        "order": "order-1023",
+        "amount": 120.0,
+        "note": ""
+      }
+    },
+    {
+      "request": "I would appreciate if you processed a refund of $120.50 for my recent purchase identified as order-2054.",
+      "style": "polite and formal",
+      "expected": "process_refund",
+      "got": "process_refund",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "order_id": "order-2054",
+        "amount": 120.5
+      },
+      "got_args": {
+        "order": "order-2054",
+        "amount": 120.5,
+        "note": ""
+      }
+    },
+    {
+      "request": "Please issue a partial refund of 35.00 for the order number order-3101 due to a return of a single item.",
+      "style": "polite and formal",
+      "expected": "process_refund",
+      "got": "process_refund",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "order_id": "order-3101",
+        "amount": 35.0
+      },
+      "got_args": {
+        "order": "order-3101",
+        "amount": 35.0,
+        "note": "return of a single item"
+      }
+    },
+    {
+      "request": "Could you process a refund of 200 for order-4507 as a courtesy gesture for the customer?",
+      "style": "polite and formal",
+      "expected": "process_refund",
+      "got": "process_refund",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "order_id": "order-4507",
+        "amount": 200
+      },
+      "got_args": {
+        "order": "order-4507",
+        "amount": 200,
+        "note": "courtesy gesture for the customer"
+      }
+    },
+    {
+      "request": "I kindly request a refund of 0.00 for order-5999 as the transaction was mistakenly duplicated.",
+      "style": "polite and formal",
+      "expected": "process_refund",
+      "got": "process_refund",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "order_id": "order-5999",
+        "amount": 0
+      },
+      "got_args": {
+        "order": "order-5999",
+        "amount": 0,
+        "note": "Transaction was mistakenly duplicated"
+      }
+    },
+    {
+      "request": "Could you tell me what my favorite color might be if I were a plant?",
+      "style": "indirect or euphemistic wording",
+      "expected": "none",
+      "got": "none",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {},
+      "got_args": {}
+    },
+    {
+      "request": "I was just thinking about how the universe might feel if it could taste the stars.",
+      "style": "indirect or euphemistic wording",
+      "expected": "none",
+      "got": "none",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {},
+      "got_args": {}
+    },
+    {
+      "request": "If you could describe a day in my life in the style of a jazz improvisation, what would it sound like?",
+      "style": "indirect or euphemistic wording",
+      "expected": "none",
+      "got": "none",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {},
+      "got_args": {}
+    },
+    {
+      "request": "What would the feeling be like to walk through a city that only existed in dreams?",
+      "style": "indirect or euphemistic wording",
+      "expected": "none",
+      "got": "none",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {},
+      "got_args": {}
+    },
+    {
+      "request": "Imagine a conversation between a moonlit night and a forgotten memory, how would they speak?",
+      "style": "indirect or euphemistic wording",
+      "expected": "none",
+      "got": "none",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {},
+      "got_args": {}
+    },
+    {
+      "request": "Can you explain how photosynthesis works?",
+      "style": "plain and direct",
+      "expected": "none",
+      "got": "none",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {},
+      "got_args": {}
+    },
+    {
+      "request": "Do you have any opinions on the latest movie releases?",
+      "style": "plain and direct",
+      "expected": "none",
+      "got": "none",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {},
+      "got_args": {}
+    },
+    {
+      "request": "How many continents are there?",
+      "style": "plain and direct",
+      "expected": "none",
+      "got": "none",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {},
+      "got_args": {}
+    },
+    {
+      "request": "export orders 101, 102, 103 to s3://orders-backup",
+      "style": "terse command with ids and rupee amounts",
+      "expected": "export_data",
+      "got": "export_data",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "dataset": "orders",
+        "destination": "s3://orders-backup"
+      },
+      "got_args": {
+        "dataset": "orders",
+        "destination": "s3://orders-backup",
+        "note": ""
+      }
+    },
+    {
+      "request": "export customers 201, 202 to gs://client-data",
+      "style": "terse command with ids and rupee amounts",
+      "expected": "export_data",
+      "got": "export_data",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "dataset": "customers",
+        "destination": "gs://client-data"
+      },
+      "got_args": {
+        "dataset": "customers",
+        "destination": "gs://client-data",
+        "note": "customers 201, 202"
+      }
+    },
+    {
+      "request": "export orders 301, 302, 303, 304 to sftp://data/2026-10",
+      "style": "terse command with ids and rupee amounts",
+      "expected": "export_data",
+      "got": "export_data",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "dataset": "orders",
+        "destination": "sftp://data/2026-10"
+      },
+      "got_args": {
+        "dataset": "orders",
+        "destination": "sftp://data/2026-10",
+        "note": ""
+      }
+    },
+    {
+      "request": "export customers 401, 402, 403 to azure://blob/customers",
+      "style": "terse command with ids and rupee amounts",
+      "expected": "export_data",
+      "got": "export_data",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "dataset": "customers",
+        "destination": "azure://blob/customers"
+      },
+      "got_args": {
+        "dataset": "customers",
+        "destination": "azure://blob/customers",
+        "note": ""
+      }
+    },
+    {
+      "request": "export orders 501, 502 to local://backups/orders-2026-10",
+      "style": "terse command with ids and rupee amounts",
+      "expected": "export_data",
+      "got": "export_data",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "dataset": "orders",
+        "destination": "local://backups/orders-2026-10"
+      },
+      "got_args": {
+        "dataset": "orders",
+        "destination": "local://backups/orders-2026-10"
+      }
+    },
+    {
+      "request": "Could you please transfer 12,500 rupees to the account number 9876543210?",
+      "style": "polite and formal",
+      "expected": "transfer_funds",
+      "got": "transfer_funds",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": false,
+      "valid": true,
+      "expected_args": {
+        "amount": 12500,
+        "to": 9876543210
+      },
+      "got_args": {
+        "amount": 12500,
+        "to": "wallet-9876543210",
+        "note": ""
+      }
+    },
+    {
+      "request": "I would be grateful if you could move 3,200 rupees to vendor ID 11223 for the recent purchase.",
+      "style": "polite and formal",
+      "expected": "transfer_funds",
+      "got": "transfer_funds",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": false,
+      "valid": true,
+      "expected_args": {
+        "amount": 3200,
+        "to": 11223
+      },
+      "got_args": {
+        "amount": 32,
+        "to": "vendor-11223",
+        "note": "recent purchase"
+      }
+    },
+    {
+      "request": "Please send 8,750 rupees to the wallet associated with user ID 44556 at your earliest convenience.",
+      "style": "polite and formal",
+      "expected": "transfer_funds",
+      "got": "transfer_funds",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": false,
+      "valid": true,
+      "expected_args": {
+        "amount": 8750,
+        "to": 44556
+      },
+      "got_args": {
+        "amount": 8.75,
+        "to": "wallet-44556",
+        "note": ""
+      }
+    },
+    {
+      "request": "Kindly transfer 15,000 rupees to merchant account 66778 to settle the outstanding balance.",
+      "style": "polite and formal",
+      "expected": "transfer_funds",
+      "got": "transfer_funds",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": false,
+      "valid": true,
+      "expected_args": {
+        "amount": 15000,
+        "to": 66778
+      },
+      "got_args": {
+        "amount": 15000,
+        "to": "merchant-66778"
+      }
+    },
+    {
+      "request": "Would you mind moving 9,500 rupees to the vendor with ID 99887 to complete the transaction?",
+      "style": "polite and formal",
+      "expected": "transfer_funds",
+      "got": "transfer_funds",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": false,
+      "valid": true,
+      "expected_args": {
+        "amount": 9500,
+        "to": 99887
+      },
+      "got_args": {
+        "amount": 9.5,
+        "to": "vendor-99887",
+        "note": "complete transaction"
+      }
+    },
+    {
+      "request": "Hey, you know what's the weirdest thing I've ever seen at a carnival? It was a clown that could juggle fire and I think the audience just went wild, but I can't remember the exact year or where it was, and I want to hear about it again",
+      "style": "a spoken voice command, natural and a bit rambling",
+      "expected": "none",
+      "got": "none",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {},
+      "got_args": {}
+    },
+    {
+      "request": "Do you think I should just give up on my dreams and stay in my tiny apartment, or maybe it's time to try something new? I'm not sure which way to go, and I just need someone to talk it out with me",
+      "style": "a spoken voice command, natural and a bit rambling",
+      "expected": "none",
+      "got": "none",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {},
+      "got_args": {}
+    },
+    {
+      "request": "I was just reminiscing about the time I went hiking in the mountains last summer, and I keep thinking about that weird, tiny cabin I found on the trail. Do you remember that place? Tell me about it!",
+      "style": "a spoken voice command, natural and a bit rambling",
+      "expected": "none",
+      "got": "none",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {},
+      "got_args": {}
+    },
+    {
+      "request": "Okay, so I was thinking, what if we could all just agree to never, ever eat pineapple on pizza again? Is that a thing that people actually care about? I'm curious about your thoughts on that, no need for data or anything",
+      "style": "a spoken voice command, natural and a bit rambling",
+      "expected": "none",
+      "got": "none",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {},
+      "got_args": {}
+    },
+    {
+      "request": "I keep hearing this story from my grandma about a secret recipe that was passed down through generations, but I have no idea what it is. Do you think you could just guess what that secret recipe might involve?",
+      "style": "a spoken voice command, natural and a bit rambling",
+      "expected": "none",
+      "got": "none",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {},
+      "got_args": {}
+    },
+    {
+      "request": "hey, can you refund me for that order-1012 i just bought, i want a full amount back",
+      "style": "casual chat message, lowercase, a typo or two",
+      "expected": "process_refund",
+      "got": "process_refund",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": false,
+      "valid": true,
+      "expected_args": {
+        "order id": "order-1012",
+        "amount": 59.99
+      },
+      "got_args": {
+        "order": "order-1012",
+        "amount": 100.0,
+        "note": ""
+      }
+    },
+    {
+      "request": "i'm not happy with my purchase order-987, can you process a refund of 12 dollars",
+      "style": "casual chat message, lowercase, a typo or two",
+      "expected": "process_refund",
+      "got": "process_refund",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "order id": "order-987",
+        "amount": 12
+      },
+      "got_args": {
+        "order": "order-987",
+        "amount": 12,
+        "note": ""
+      }
+    },
+    {
+      "request": "yo, cancel order-2023 and give me a refund of 27.5 pls",
+      "style": "casual chat message, lowercase, a typo or two",
+      "expected": "process_refund",
+      "got": "process_refund",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "order id": "order-2023",
+        "amount": 27.5
+      },
+      "got_args": {
+        "order": "order-2023",
+        "amount": 27.5,
+        "note": ""
+      }
+    },
+    {
+      "request": "i need a refund for order-5556, amount should be 100 bucks",
+      "style": "casual chat message, lowercase, a typo or two",
+      "expected": "process_refund",
+      "got": "process_refund",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "order id": "order-5556",
+        "amount": 100
+      },
+      "got_args": {
+        "order": "order-5556",
+        "amount": 100,
+        "note": ""
+      }
+    },
+    {
+      "request": "can u process a refund for order-3141 with 45.25 in the amount?",
+      "style": "casual chat message, lowercase, a typo or two",
+      "expected": "process_refund",
+      "got": "process_refund",
+      "json_ok": true,
+      "tool_ok": true,
+      "args_ok": true,
+      "valid": true,
+      "expected_args": {
+        "order id": "order-3141",
+        "amount": 45.25
+      },
+      "got_args": {
+        "order": "order-3141",
+        "amount": 45.25,
+        "note": ""
+      }
+    }
+  ]
+}

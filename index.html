@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VerifAI — Guardrail Console</title>
+<meta name="description" content="Before AI makes a move, VerifAI checks that it is safe, authorized, explainable and reversible.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234F46E5'/%3E%3Cpath d='M16 6l8 3.5v6c0 5-3.4 8.6-8 10-4.6-1.4-8-5-8-10v-6z' fill='none' stroke='white' stroke-width='2' stroke-linejoin='round'/%3E%3Cpath d='M12 16l3 3 5-6' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=84">
+</head>
+<body class="on-home">
+
+<!-- icon sprite (stroke icons, 24x24) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3.2v5.6c0 4.7-3.2 8-8 9.7-4.8-1.7-8-5-8-9.7V6.2z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.2l2.6 2.6L16 9.4"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3.5l9.5 16.5h-19z"/><path d="M12 10v4.2M12 17.4v.1"/></symbol>
+  <symbol id="i-block" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M5.7 5.7l12.6 12.6"/></symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-clip" viewBox="0 0 24 24"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.9 5.6L19.5 10.5l-5.6 1.9L12 18l-1.9-5.6L4.5 10.5l5.6-1.9z"/><path d="M19 3v4M17 5h4"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></symbol>
+  <symbol id="i-work" viewBox="0 0 24 24"><rect x="3.5" y="4" width="17" height="16" rx="2.5"/><path d="M12 4v16M3.5 9.5H12"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M5 20V11M12 20V4M19 20v-6"/></symbol>
+  <symbol id="i-branch" viewBox="0 0 24 24"><circle cx="6" cy="5.5" r="2.2"/><circle cx="6" cy="18.5" r="2.2"/><circle cx="18" cy="12" r="2.2"/><path d="M6 7.7v8.6M8.1 12H15.8"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M5 4.5h11a3 3 0 0 1 3 3V20H8a3 3 0 0 1-3-3z"/><path d="M5 17a3 3 0 0 1 3-3h11"/></symbol>
+  <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.6-5.9M20 4.5v4.6h-4.6"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></symbol>
+  <symbol id="i-sound" viewBox="0 0 24 24"><path d="M11 5L6.5 9H3.5v6h3L11 19z"/><path d="M15 9a4 4 0 0 1 0 6M17.8 6.5a8 8 0 0 1 0 11"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.6v.1"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="9.5" rx="2.2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 4l9 4.8-9 4.8-9-4.8z"/><path d="M3 12.6l9 4.8 9-4.8M3 16.6l9 4.8 9-4.8"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-undo" viewBox="0 0 24 24"><path d="M9 7L4.5 11.5 9 16"/><path d="M4.5 11.5H14a5.5 5.5 0 0 1 0 11H11"/></symbol>
+  <symbol id="i-gauge" viewBox="0 0 24 24"><path d="M4 17a8 8 0 1 1 16 0"/><path d="M12 17l4.2-5"/><path d="M12 17.2v.1"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.6"/><path d="M5 20a7 7 0 0 1 14 0"/></symbol>
+</defs></svg>
+
+<!-- ======================= HOMEPAGE ======================= -->
+<div id="signin" class="hide">
+  <div class="si-wrap">
+    <div class="brand" data-go="home"><span class="logo"><svg class="ic"><use href="#i-shield"/></svg></span><b>VerifAI</b></div>
+    <div class="si-card">
+      <h1>Sign in</h1>
+      <p class="si-sub">Choose how you are using VerifAI.</p>
+      <div class="si-tabs" role="tablist" aria-label="Account type">
+        <button type="button" role="tab" id="siTabUser" data-portal="user" aria-selected="true"><svg class="ic"><use href="#i-user"/></svg> User</button>
+        <button type="button" role="tab" id="siTabAdmin" data-portal="admin" aria-selected="false"><svg class="ic"><use href="#i-lock"/></svg> Admin</button>
+      </div>
+      <form id="siForm" autocomplete="off">
+        <p class="si-who" id="siWho"></p>
+        <label for="siUser">Username</label>
+        <input id="siUser" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Your username">
+        <label for="siPin">PIN</label>
+        <input id="siPin" type="password" inputmode="numeric" autocomplete="off" placeholder="Your PIN">
+        <p class="si-msg" id="siMsg" role="alert"></p>
+        <button class="btn primary lg" id="siGo" type="submit">Sign in</button>
+      </form>
+      <button type="button" class="si-guest" id="siGuest">Continue as guest <span>(you can check requests, but not approve them or change settings)</span></button>
+      <details class="si-demo"><summary>Demo accounts</summary>
+        <p><b>User:</b> asha / 1111 (requester) &nbsp;·&nbsp; ravi / 2222 (reviewer)<br><b>Admin:</b> meena / 3333</p>
+        <p class="note">Sample accounts for this demo. Replace them with <code>scripts/add_user.py</code> before real use.</p></details>
+    </div>
+  </div>
+</div>
+
+<div id="home">
+  <div class="hnav-wrap"><div class="wrap hnav">
+    <div class="brand"><span class="logo"><svg class="ic"><use href="#i-shield"/></svg></span><b>VerifAI</b></div>
+    <div class="hlinks"><a href="#h-pillars">Four checks</a><a href="#h-flow">How it decides</a><a href="#h-do">What you can do</a><button class="btn primary sm" data-go="input">Try VerifAI</button></div>
+  </div></div>
+
+  <section class="wrap hero">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="dotlive"></span> Agentic AI guardrail validator</p>
+      <h1>Before AI makes a move, <span class="grad">we make sure it moves right.</span></h1>
+      <p class="lead">VerifAI sits between an AI agent’s decision and its execution. Every proposed action is checked to be safe, authorized, explainable and reversible before it is allowed to run.</p>
+      <div class="cta"><button class="btn primary lg" data-go="input">Try VerifAI <svg class="ic"><use href="#i-arrow"/></svg></button><button class="btn ghost lg" data-demo="1"><svg class="ic"><use href="#i-play"/></svg> Watch a guided demo</button></div>
+      <ul class="trust"><li><svg class="ic"><use href="#i-check"/></svg>Plain-language reasons</li><li><svg class="ic"><use href="#i-check"/></svg>Works on prompts and documents</li><li><svg class="ic"><use href="#i-check"/></svg>Replayable evidence ledger</li></ul>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="mock">
+        <div class="mock-bar"><i></i><i></i><i></i><span>Illustrative example</span></div>
+        <div class="mock-prompt"><svg class="ic"><use href="#i-user"/></svg><span>“Delete customer 1’s account permanently, no backup.”</span></div>
+        <div class="mock-steps">
+          <div class="ms ok"><svg class="ic"><use href="#i-check"/></svg><b>Safety</b><em>Nothing harmful</em></div>
+          <div class="ms warn"><svg class="ic"><use href="#i-alert"/></svg><b>Authorization</b><em>Needs more autonomy</em></div>
+          <div class="ms bad"><svg class="ic"><use href="#i-block"/></svg><b>Reversibility</b><em>Cannot be restored</em></div>
+        </div>
+        <div class="mock-verdict"><div><small>Decision</small><strong>Blocked</strong></div><div class="mv-meter"><span style="width:78%"></span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap hsec" id="h-pillars">
+    <h2 class="sec">Four checks on every action</h2>
+    <p class="sec-sub">Nothing runs until it passes all four.</p>
+    <div class="cards4">
+      <div class="pc"><span class="ico ico-ok"><svg class="ic"><use href="#i-shield"/></svg></span><h3>Safe</h3><p>A safety model flags harmful requests, forgery and prompt-injection before anything else happens.</p></div>
+      <div class="pc"><span class="ico ico-brand"><svg class="ic"><use href="#i-lock"/></svg></span><h3>Authorized</h3><p>Capability and earned autonomy are scored 0–10 and combined as <span class="mono">min(AAL, ACL)</span>. Being capable never unlocks permission.</p></div>
+      <div class="pc"><span class="ico ico-warn"><svg class="ic"><use href="#i-eye"/></svg></span><h3>Explainable</h3><p>Every decision carries a plain-language reason, a safer alternative and a replayable ledger entry.</p></div>
+      <div class="pc"><span class="ico ico-bad"><svg class="ic"><use href="#i-undo"/></svg></span><h3>Reversible</h3><p>Reversal cost is scored by walking the dependency graph discovered from database foreign keys.</p></div>
+    </div>
+  </section>
+
+  <section class="wrap hsec" id="h-flow">
+    <h2 class="sec">How it decides</h2>
+    <p class="sec-sub">Eight stages, one verdict, and a record of why.</p>
+    <div class="flow">
+      <div><i>1</i><b>Input</b><span>Prompt or document</span></div>
+      <div><i>2</i><b>Analyzer</b><span>Parses the action</span></div>
+      <div><i>3</i><b>WildGuard</b><span>Safety check</span></div>
+      <div><i>4</i><b>Risk engine</b><span>Reversal, policy, impact</span></div>
+      <div><i>5</i><b>Authorization</b><span>Capability vs autonomy</span></div>
+      <div><i>6</i><b>Decision</b><span>Allow, review or block</span></div>
+      <div><i>7</i><b>Escalation</b><span>Trajectory or explanation</span></div>
+      <div><i>8</i><b>Ledger</b><span>Replayable evidence</span></div>
+    </div>
+    <div class="verd3">
+      <div class="v ok"><svg class="ic"><use href="#i-check"/></svg><div><b>Low risk → Allow</b><span>The action may run.</span></div></div>
+      <div class="v warn"><svg class="ic"><use href="#i-alert"/></svg><div><b>Mid risk → Review</b><span>A person approves, with a safer way suggested.</span></div></div>
+      <div class="v bad"><svg class="ic"><use href="#i-block"/></svg><div><b>High risk → Block</b><span>Stopped, and checked against the whole session.</span></div></div>
+    </div>
+  </section>
+
+  <section class="wrap hsec" id="h-do">
+    <h2 class="sec">What you can do</h2>
+    <div class="cards4">
+      <div class="pc"><span class="ico ico-brand"><svg class="ic"><use href="#i-mic"/></svg></span><h3>Type or speak</h3><p>Describe an action in plain language, or use the microphone.</p></div>
+      <div class="pc"><span class="ico ico-brand"><svg class="ic"><use href="#i-file"/></svg></span><h3>Bring a document</h3><p>Attach a PDF, Word file or image. Only edits that pass the guardrails reach the output.</p></div>
+      <div class="pc"><span class="ico ico-brand"><svg class="ic"><use href="#i-layers"/></svg></span><h3>Run a session</h3><p>Give several prompts and watch risk build up across them.</p></div>
+      <div class="pc"><span class="ico ico-brand"><svg class="ic"><use href="#i-chart"/></svg></span><h3>See the risk</h3><p>A dashboard shows risk over time and which records an action would affect.</p></div>
+    </div>
+  </section>
+
+  <section class="wrap"><div class="band">
+    <div><h2>See it decide in under a minute</h2><p>Play a guided demo, or type your own action.</p></div>
+    <div class="cta"><button class="btn primary lg" data-go="input">Try VerifAI</button><button class="btn ghost-inv lg" data-demo="1">Watch a demo</button></div>
+  </div></section>
+
+  <footer class="hfoot">Hackathon prototype · Team Delta</footer>
+</div>
+
+<!-- ======================= APP SHELL ======================= -->
+<div id="app" class="hide">
+  <header id="appHeader">
+    <div class="hbar">
+      <div class="brand" data-go="home" role="button" tabindex="0" aria-label="VerifAI home"><span class="logo"><svg class="ic"><use href="#i-shield"/></svg></span><b>VerifAI</b></div>
+      <nav id="nav" aria-label="Sections">
+        <button data-v="work"><svg class="ic"><use href="#i-work"/></svg><span>Workspace</span></button>
+        <button data-v="dash"><svg class="ic"><use href="#i-chart"/></svg><span>Dashboard</span></button>
+        <button data-v="cf"><svg class="ic"><use href="#i-branch"/></svg><span>Why &amp; what-if</span></button>
+        <button data-v="queue"><svg class="ic"><use href="#i-user"/></svg><span>Reviews</span></button>
+        <button data-v="ledger"><svg class="ic"><use href="#i-book"/></svg><span>Ledger</span></button>
+        <button data-v="config"><svg class="ic"><use href="#i-sliders"/></svg><span>Settings</span></button>
+      </nav>
+      <div class="hright">
+        <span id="saveState" class="hide">Checking…</span>
+        <div class="sys">
+          <button class="chipbtn" id="sysBtn" aria-haspopup="true" aria-expanded="false" title="System status"><i class="sysdot" id="sysDot"></i><span id="sysLabel">Status</span></button>
+          <div class="syspop hide" id="sysPop" role="menu"></div>
+        </div>
+        <button class="chipbtn" id="whoBtn" aria-label="Sign in or out" title="Sign in"><svg class="ic"><use href="#i-user"/></svg><span>Sign in</span></button>
+        <button class="iconbtn" id="speakToggle" title="Read verdicts aloud" aria-pressed="false" aria-label="Read verdicts aloud"><svg class="ic"><use href="#i-sound"/></svg></button>
+        <button class="btn ghost sm" id="newSession" title="Forget this session's history: earned autonomy and trajectory risk start fresh. Saved records are kept."><svg class="ic"><use href="#i-refresh"/></svg><span>New session</span></button>
+        <button class="btn primary sm" data-go="input"><svg class="ic"><use href="#i-plus"/></svg><span>New input</span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ---------- centered input ---------- -->
+  <section id="v-input" class="view center">
+    <div class="ibox">
+      <p class="eyebrow center-t">VerifAI</p>
+      <h2 class="ask">What should the agent do?</h2>
+      <p class="ask-sub">Describe an action or attach a document. VerifAI checks it before anything runs.</p>
+      <div class="composer big">
+        <div id="chip1" class="attached hide"></div>
+        <textarea id="prompt1" rows="3" placeholder="e.g. Delete the user account for customer 1 permanently, there is no backup" aria-label="Describe the action"></textarea>
+        <div class="crow">
+          <button class="iconbtn" id="attach1" title="Attach a document (PDF, Word, image, text)" aria-label="Attach a document"><svg class="ic"><use href="#i-clip"/></svg></button>
+          <button class="iconbtn mic" id="mic1" title="Speak" aria-label="Speak a command"><svg class="ic"><use href="#i-mic"/></svg></button>
+          <span class="micstate" id="micstate1"></span>
+          <button class="btn soft" id="sendAgent1" title="An LLM drafts a real answer, and you only see it if the guardrail allows the request"><svg class="ic"><use href="#i-spark"/></svg> Ask agent</button>
+          <button class="btn primary" id="send1"><span>Check action</span><svg class="ic"><use href="#i-arrow"/></svg></button>
+        </div>
+      </div>
+      <div class="examples" id="exChips" aria-label="Examples">
+        <span>Try:</span>
+        <button class="chip" data-ex="What is our refund policy?">A safe question</button>
+        <button class="chip" data-ex="Update the phone number on the customer record to 9876543210">Update a record</button>
+        <button class="chip" data-ex="Delete the user account for customer 1 permanently, there is no backup">Risky delete</button>
+        <button class="chip" data-ex="Send the promotional campaign email to 10,000 recipients, the batch has already been sent">Mass email</button>
+        <button class="chip" data-ex="Transfer ₹200 to wallet-7721">A small transfer</button>
+      </div>
+      <p class="ihint"><b>Check action</b> runs the guardrail. <b>Ask agent</b> also has an LLM write an answer, shown only if the request is allowed. <a href="#" id="sampleDoc">Try a sample document</a> · <a href="#" data-demo="1">Watch a guided demo</a> · one prompt per line runs several in a row.</p>
+      <input type="file" id="file" class="hide" accept=".txt,.md,.csv,.json,.log,.docx,.pdf,.png,.jpg,.jpeg">
+    </div>
+  </section>
+
+  <!-- ---------- split workspace ---------- -->
+  <section id="v-work" class="view hide split">
+    <div class="pane left" id="left">
+      <div class="phead">
+        <div><h3>Decision trail</h3><div class="sub">How the agent reached its verdict, step by step.</div></div>
+        <div class="phead-actions"><button class="btn ghost sm" id="expandAll" title="Show or hide the technical details of every step">Details</button><button class="btn ghost sm" data-demo="1"><svg class="ic"><use href="#i-play"/></svg> Demo</button></div>
+      </div>
+      <div id="timeline" class="timeline"></div>
+      <div id="demoBar" class="demobar hide"></div>
+      <div id="trace" class="trace"></div>
+      <div class="composer small">
+        <div id="chip2" class="attached hide"></div>
+        <div class="crow2">
+          <button class="iconbtn" id="attach2" title="Attach a document" aria-label="Attach a document"><svg class="ic"><use href="#i-clip"/></svg></button>
+          <textarea id="prompt2" rows="1" placeholder="Add another action (one per line to run several)…" aria-label="Add another action"></textarea>
+          <button class="iconbtn mic" id="mic2" title="Speak" aria-label="Speak a command"><svg class="ic"><use href="#i-mic"/></svg></button>
+          <button class="btn soft sm" id="sendAgent2" title="An LLM drafts a real answer, shown only if the guardrail allows it"><svg class="ic"><use href="#i-spark"/></svg><span>Ask agent</span></button>
+          <button class="btn primary sm" id="send2"><span>Check</span><svg class="ic"><use href="#i-arrow"/></svg></button>
+        </div>
+      </div>
+    </div>
+    <div class="pane right" id="right"></div>
+  </section>
+
+  <!-- ---------- dashboard ---------- -->
+  <section id="v-dash" class="view hide"><div class="wrap page">
+    <div class="pagehead"><div><h1>Risk dashboard</h1><p>How risky each action was, how risk builds across the session, and which records an action would affect.</p></div></div>
+    <div id="dash"></div>
+  </div></section>
+
+  <!-- ---------- counterfactual feedback ---------- -->
+  <section id="v-cf" class="view hide"><div class="wrap page">
+    <div class="pagehead"><div><h1>Why it happened, and what would change it</h1><p>A plain-language explanation of the decision, what-if tests that re-run the checks, and a report you can download.</p></div></div>
+    <div id="cf"></div>
+  </div></section>
+
+  <!-- ---------- reviewers' queue ---------- -->
+  <section id="v-queue" class="view hide"><div class="wrap page">
+    <div class="pagehead"><div><h1>Pending reviews</h1><p>Requests that people sent to a reviewer instead of deciding themselves. A reviewer cannot decide a request they made.</p></div>
+      <div class="pagehead-actions"><button class="btn ghost sm" id="queueRefresh"><svg class="ic"><use href="#i-refresh"/></svg> Refresh</button></div></div>
+    <div id="queueBody"></div>
+  </div></section>
+
+  <!-- ---------- ledger ---------- -->
+  <section id="v-ledger" class="view hide"><div class="wrap page">
+    <div class="pagehead"><div><h1>Evidence ledger</h1><p>Every decision is logged and chained by hash. Replay one to confirm the same input gives the same verdict, or verify the whole chain.</p></div>
+      <div class="pagehead-actions"><button class="btn ghost sm" id="verifyLedger"><svg class="ic"><use href="#i-shield"/></svg> Verify chain</button><button class="btn ghost sm" id="exportLedger"><svg class="ic"><use href="#i-down"/></svg> Export</button><button class="btn ghost sm" id="clearLedger">Clear view</button></div></div>
+    <div class="card flush">
+      <p id="verifyOut" class="note verify"></p>
+      <div class="scroll"><table id="ledgerTable"></table></div>
+    </div></div>
+  </section>
+
+  <!-- ---------- settings ---------- -->
+  <section id="v-config" class="view hide"><div class="wrap page">
+    <div class="pagehead"><div><h1>Settings</h1><p>Tune how the risk is weighed. These are placeholders for your team to calibrate.</p><p class="note" id="cfgNote" style="margin-top:6px"></p></div></div>
+    <div class="two">
+      <div>
+        <div class="card">
+          <h3>Weighted risk engine</h3>
+          <p class="sub">Three 0–10 factors are combined into one score.</p>
+          <div class="sliderrow"><span>Reversal cost</span><input type="range" min="0" max="100" id="wR" aria-label="Reversal cost weight"><b class="mono" id="wRv"></b></div>
+          <div class="sliderrow"><span>Policy / RAG</span><input type="range" min="0" max="100" id="wP" aria-label="Policy weight"><b class="mono" id="wPv"></b></div>
+          <div class="sliderrow"><span>Intent &amp; impact</span><input type="range" min="0" max="100" id="wI" aria-label="Impact weight"><b class="mono" id="wIv"></b></div>
+          <hr class="hr">
+          <h3>Decision thresholds</h3>
+          <div class="sliderrow"><span>Review from</span><input type="range" min="5" max="60" id="t1" aria-label="Review threshold"><b class="mono" id="t1v"></b></div>
+          <div class="sliderrow"><span>Block from</span><input type="range" min="10" max="90" id="t2" aria-label="Block threshold"><b class="mono" id="t2v"></b></div>
+          <hr class="hr">
+          <h3>Trajectory risk</h3>
+          <div class="sliderrow"><span>τ₁ escalate</span><input type="range" min="5" max="90" id="tau1" aria-label="Escalation threshold"><b class="mono" id="tau1v"></b></div>
+          <div class="sliderrow"><span>τ₂ block</span><input type="range" min="10" max="95" id="tau2" aria-label="Trajectory block threshold"><b class="mono" id="tau2v"></b></div>
+          <button class="btn ghost sm" id="resetCfg" style="margin-top:6px">Reset to defaults</button>
+        </div>
+      </div>
+      <div class="card" id="modelsCard">
+        <h3>Models</h3>
+        <p class="sub">Which model does which job. Only an admin can change the safety model, and every change is recorded in the ledger.</p>
+        <div class="mrole"><b>Safety check</b><span>Judges whether a request is harmful.</span></div>
+        <div id="safetyOptions" class="mopts" role="radiogroup" aria-label="Safety model"></div>
+        <div class="mrole" style="margin-top:16px"><b>Agent</b><span>Writes the answers.</span></div>
+        <div id="agentModel" class="mopts"></div>
+        <p class="note" id="modelsMsg" style="margin-top:10px"></p>
+      </div>
+      <div class="card">
+        <h3>Policy limits</h3>
+        <p class="sub">Numbers used by the hard and soft rules. Only a policy owner should change these; every change is written to the ledger.</p>
+        <div class="sliderrow"><span>Single transaction cap (₹)</span><input type="number" min="1000" step="1000" id="pcCap" aria-label="Single transaction cap in rupees" style="width:130px"></div>
+        <div class="sliderrow"><span>Dual approval above (₹)</span><input type="number" min="0" step="500" id="pcDual" aria-label="Dual approval threshold in rupees" style="width:130px"></div>
+        <div class="sliderrow"><span>Policy model sends to a person from (%)</span><input type="number" min="30" max="99" id="pcModelRev" aria-label="Policy model confidence at which a person reviews" style="width:130px"></div>
+        <div class="sliderrow"><span>Policy model blocks alone (%)</span><input type="number" min="50" max="99" id="pcModel" aria-label="Policy model confidence needed on its own" style="width:130px"></div>
+        <div class="sliderrow"><span>Policy model blocks with WildGuard (%)</span><input type="number" min="30" max="99" id="pcModelWG" aria-label="Policy model confidence needed when WildGuard agrees" style="width:130px"></div>
+        <div style="display:flex;gap:8px;margin-top:8px"><button class="btn sm" id="pcSave">Save limits</button><button class="btn ghost sm" id="pcReset">Reset to defaults</button></div>
+        <p class="note" id="pcMsg" style="margin-top:8px"></p>
+      </div>
+      <div class="card">
+        <h3>Policy pack</h3>
+        <p class="sub">Rules the risk engine checks. A hard rule forbids the action outright and short-circuits to Block, whatever the score. The full list with the reasoning is in HARD_POLICY.md.</p>
+        <div id="policyList"></div>
+      </div>
+    </div>
+  </div></section>
+</div>
+
+<!-- demo picker -->
+<div id="demoModal" class="modal hide" role="dialog" aria-modal="true" aria-label="Guided demos">
+  <div class="mcard">
+    <div class="mhead"><div><h3>Guided demos</h3><p class="sub">Each one runs several prompts in a row so you can watch risk build. Pause, skip or stop at any time.</p></div><button class="iconbtn" id="closeDemo" aria-label="Close"><svg class="ic"><use href="#i-x"/></svg></button></div>
+    <div id="demoList"></div>
+  </div>
+</div>
+
+<div id="authModal" class="modal hide" role="dialog" aria-modal="true" aria-label="Sign in"></div>
+<div id="approvalModal" class="modal hide" role="dialog" aria-modal="true" aria-label="Human approval"></div>
+
+<div id="busy" class="busy hide" role="status" aria-live="polite"><svg class="ic spin"><use href="#i-refresh"/></svg><span id="busyText"></span></div>
+<div id="toast" class="toast hide" role="status" aria-live="polite"></div>
+
+<script src="chart.umd.min.js"></script>
+<script src="jszip.min.js"></script>
+<script src="engine.js?v=56"></script>
+<script src="docs.js?v=43"></script>
+<script src="app.js?v=100"></script>
+</body>
+</html>

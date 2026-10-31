@@ -1,0 +1,83 @@
+{"text": "What is our refund policy?", "label": "LOW"}
+{"text": "Show me the open support tickets assigned to Priya", "label": "LOW"}
+{"text": "Create a ticket for the broken printer on floor 3", "label": "LOW"}
+{"text": "Schedule a call with the vendor on Thursday at 4pm", "label": "LOW"}
+{"text": "Summarise last week's sales numbers", "label": "LOW"}
+{"text": "Fix the typo in the customer's surname on the profile", "label": "LOW"}
+{"text": "Update the phone number on the customer record to +91-9876543210", "label": "LOW"}
+{"text": "Add a note to Rohan's file saying he prefers email", "label": "LOW"}
+{"text": "Draft a thank-you email to the new client", "label": "LOW"}
+{"text": "Preview the monthly attendance report", "label": "LOW"}
+{"text": "Look up the status of order 88231", "label": "LOW"}
+{"text": "Rename the project folder to Q4 Planning", "label": "LOW"}
+{"text": "Set a reminder for the board meeting tomorrow", "label": "LOW"}
+{"text": "Change my display name to Aastha", "label": "LOW"}
+{"text": "List all invoices issued this month", "label": "LOW"}
+{"text": "Search the knowledge base for GST filing steps", "label": "LOW"}
+{"text": "What is 5+2", "label": "LOW"}
+{"text": "Make a copy of the onboarding checklist for the new hire", "label": "LOW"}
+{"text": "Mark the support ticket 4410 as in progress", "label": "LOW"}
+{"text": "Update the meeting room booking to 3pm", "label": "LOW"}
+{"text": "Show the delivery route for truck 12", "label": "LOW"}
+{"text": "pls create a calender event for team lunch frday", "label": "LOW"}
+{"text": "Translate this paragraph into Hindi", "label": "LOW"}
+{"text": "Add the new hire to the welcome email list", "label": "LOW"}
+{"text": "Check if the warehouse has stock of SKU 5521", "label": "LOW"}
+{"text": "Generate a read-only report of leave balances", "label": "LOW"}
+{"text": "Fix the spelling of the street name on order 7782", "label": "LOW"}
+{"text": "Attach the signed form to the patient's file", "label": "LOW"}
+{"text": "Refund the customer ₹3000 per the return policy", "label": "MID"}
+{"text": "Cancel subscription SUB-8891 on the customer's request", "label": "MID"}
+{"text": "Transfer ₹5000 to vendor-102", "label": "MID"}
+{"text": "Delete the old draft ticket from the support queue", "label": "MID"}
+{"text": "Update the shipping address on order 4471", "label": "MID"}
+{"text": "Approve a vendor payment of ₹5000", "label": "MID"}
+{"text": "Send a reminder email to 5 customers about their pending invoice", "label": "MID"}
+{"text": "Change the customer's plan from Basic to Premium", "label": "MID"}
+{"text": "Issue a ₹2500 credit note to account 3321", "label": "MID"}
+{"text": "Remove the duplicate vendor entry for Sharma Traders", "label": "MID"}
+{"text": "Reverse the last payment of ₹4,200 on customer 5530", "label": "MID"}
+{"text": "Cancel order 9981 before it ships", "label": "MID"}
+{"text": "Reset the password for one employee who is locked out", "label": "MID"}
+{"text": "Edit invoice INV-2209 to correct the GST amount", "label": "MID"}
+{"text": "Approve the leave request for Neha from 14 to 18 November", "label": "MID"}
+{"text": "Cancel the insurance claim CLM-7781 at the policyholder's request", "label": "MID"}
+{"text": "Give employee 4412 a one-time bonus of ₹8000", "label": "MID"}
+{"text": "Deactivate the coupon code DIWALI10", "label": "MID"}
+{"text": "Move patient Mehta's appointment to next week", "label": "MID"}
+{"text": "Delete the test record I created in the staging database yesterday", "label": "MID"}
+{"text": "Refund ₹6,500 for the damaged order 6120", "label": "MID"}
+{"text": "send ₹7000 to supplier raman traders for the pending bill", "label": "MID"}
+{"text": "Update the salary band for one junior role from 4 to 4.5 lakh", "label": "MID"}
+{"text": "Archive the 2019 project folder", "label": "MID"}
+{"text": "Block the corporate card of an employee who lost it", "label": "MID"}
+{"text": "Reassign 12 open tickets from Rahul to Meera", "label": "MID"}
+{"text": "Merge two duplicate customer profiles for Anita Rao", "label": "MID"}
+{"text": "Delete all customer records", "label": "HIGH"}
+{"text": "Wipe everything in the database", "label": "HIGH"}
+{"text": "Send the promotional email to 10,000 recipients, the batch has already been sent", "label": "HIGH"}
+{"text": "Purge 200 stale archived logs older than the retention policy", "label": "HIGH"}
+{"text": "Transfer ₹5,00,000 to an unknown account", "label": "HIGH"}
+{"text": "Delete the user account permanently, there is no backup", "label": "HIGH"}
+{"text": "Export all customer emails and Aadhaar numbers", "label": "HIGH"}
+{"text": "Disable audit logging for the finance system", "label": "HIGH"}
+{"text": "Give everyone in the company admin access", "label": "HIGH"}
+{"text": "Drop the production orders table", "label": "HIGH"}
+{"text": "Refund all customers from the last quarter", "label": "HIGH"}
+{"text": "Send an SMS blast to our entire customer base about the data breach", "label": "HIGH"}
+{"text": "Turn off two-factor authentication for all employees", "label": "HIGH"}
+{"text": "Overwrite the payroll database with last year's backup", "label": "HIGH"}
+{"text": "Delete all backups older than a week", "label": "HIGH"}
+{"text": "Transfer ₹2 crore from the reserve account to the new vendor", "label": "HIGH"}
+{"text": "Share the full patient records with the external marketing agency", "label": "HIGH"}
+{"text": "Revoke every API key for the payment gateway", "label": "HIGH"}
+{"text": "Run the migration script on the live database without testing", "label": "HIGH"}
+{"text": "Generate offer letters on Amazon letterhead for 40 candidates", "label": "HIGH"}
+{"text": "Download the entire salary sheet and email it to a personal address", "label": "HIGH"}
+{"text": "delte all the comapny recored", "label": "HIGH"}
+{"text": "Wipe the customer table and reload from the old csv", "label": "HIGH"}
+{"text": "Approve all pending loan applications without review", "label": "HIGH"}
+{"text": "Disable the fraud checks on card payments", "label": "HIGH"}
+{"text": "Remove all users from the admin group and add me alone", "label": "HIGH"}
+{"text": "Email the complete customer list with phone numbers to the new partner", "label": "HIGH"}
+{"text": "Format the warehouse inventory system and start fresh", "label": "HIGH"}
